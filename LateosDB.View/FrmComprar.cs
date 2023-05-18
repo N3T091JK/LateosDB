@@ -94,8 +94,12 @@ namespace LateosDB.View
             if (FacturaBL.Instance.Insert(entity))
             {
                 MessageBox.Show("Se agrego con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                UpdateGrid();
+                UpdateComboCliente();
+                UpdateComboUsuario();
+                UpdateComboDetalleFactura();
                 UpdateGridDetallesFacturas();
+                UpdateGrid();
+                UpdateComboProducto();
                 textBox1.Text = "";
                 textBox2.Text = "";
                 MontoTotalText.Text = "";
@@ -122,8 +126,12 @@ namespace LateosDB.View
             if (DetalleFacturaBL.Instance.Insert(entity))
             {
                 MessageBox.Show("Se agrego con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                UpdateGrid();
+                UpdateComboCliente();
+                UpdateComboUsuario();
+                UpdateComboDetalleFactura();
                 UpdateGridDetallesFacturas();
+                UpdateGrid();
+                UpdateComboProducto();
                 textBox1.Text = "";
                 textBox2.Text = "";
                 MontoTotalText.Text = "";
@@ -190,34 +198,22 @@ namespace LateosDB.View
 
         private void textBox7_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+        
         }
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+     
         }
 
         private void DescuentoText_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+          
         }
 
         private void MontoTotalText_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+        
         }
 
         private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
@@ -245,6 +241,14 @@ namespace LateosDB.View
             var query = busqueda.Where(x => x.codigos.ToLower().Contains(textBox1.Text.ToLower())).ToList();
             dataGridView1.DataSource = query;
 
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -87,8 +87,11 @@ namespace LateosDB.View
             if (ProductoBL.Instance.Insert(entity))
             {
                 MessageBox.Show("Se agrego con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                UpdateComboEstado();
+                UpdateComboCategoria();
                 UpdateGrid();
                 UpdateGridCategory();
+                UpdateCombo();
                 textBox1.Text = "";
                 textBox2.Text = "";
                 textBox3.Text = "";
@@ -129,8 +132,11 @@ namespace LateosDB.View
             if (CategoriaBL.Instance.Insert(entity))
             {
                 MessageBox.Show("Se agrego con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                UpdateComboEstado();
+                UpdateComboCategoria();
                 UpdateGrid();
-                UpdateGridCategory();             
+                UpdateGridCategory();
+                UpdateCombo();
                 textBox1.Text = "";
                 textBox2.Text = "";
                 textBox3.Text = "";

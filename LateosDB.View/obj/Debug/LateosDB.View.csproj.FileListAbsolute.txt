@@ -42,3 +42,47 @@ C:\Users\HOME\Desktop\Proyecto Lateos\LateosDB\LateosDB.View\obj\Debug\LateosDB.
 C:\Users\HOME\Desktop\Proyecto Lateos\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.FrmComprar.resources
 C:\Users\HOME\Desktop\Proyecto Lateos\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.FrmDisponible.resources
 C:\Users\HOME\Desktop\Proyecto Lateos\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.FrmHistorial.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\bin\Debug\LateosDB.View.exe.config
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\bin\Debug\LateosDB.View.exe
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\bin\Debug\LateosDB.View.pdb
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\bin\Debug\EntityFramework.dll
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\bin\Debug\LateosDB.BusinessLogic.dll
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\bin\Debug\LateosDB.Entities.dll
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\bin\Debug\LateosDB.DataAccess.dll
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\bin\Debug\LateosDB.BusinessLogic.pdb
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\bin\Debug\LateosDB.BusinessLogic.dll.config
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\bin\Debug\LateosDB.Entities.pdb
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\bin\Debug\LateosDB.Entities.dll.config
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\bin\Debug\EntityFramework.xml
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\bin\Debug\LateosDB.DataAccess.pdb
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\bin\Debug\LateosDB.DataAccess.dll.config
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.csproj.AssemblyReference.cache
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.csproj.SuggestedBindingRedirects.cache
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.Agregar.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.BSCategoria.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.Cero.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.FrmCliente.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.FrmCompraProducto.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.FrmComprar.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.FrmDetalleComprar.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.FrmDetalleFactura.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.FrmDisponible.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.FrmEmpleado.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.frmEmpresa.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.frmEstados.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.FrmFactura.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.FrmHistorial.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.FrmInventario.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.FrmLog.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.FrmProducto.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.FrmRegistro.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.FrmRoles.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.FrmUsuario.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.Properties.Resources.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.csproj.GenerateResource.cache
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.csproj.CoreCompileInputs.cache
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.csproj.CopyComplete
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.exe
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.pdb
