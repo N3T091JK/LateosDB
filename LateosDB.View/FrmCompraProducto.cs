@@ -26,21 +26,22 @@ namespace LateosDB.View
         {
             UpdateGrid();
             UpdateComboCompraProducto();
+            UpdateGrid1();
         }
 
-        //private void UpdateGrid()
-        //{
-        //    _listado = CompraProductoBL.Instance.SellecALL();
-        //    var query = from x in _listado
-        //                select new
-        //                {
-        //                    Id = x.IdCompraProducto,
-        //                    MarcaProductos = x.MarcaProducto,
-        //                    Cantidades = x.Cantidad,
-        //                    Fecha = x.FechaRegistro
-        //                };
-        //    dataGridView1.DataSource = query.ToList();
-        //}
+        private void UpdateGrid1()
+        {
+            _listado = CompraProductoBL.Instance.SellecALL();
+            var query = from x in _listado
+                        select new
+                        {
+                            Id = x.IdCompraProducto,
+                            MarcaProductos = x.MarcaProducto,
+                            Cantidades = x.Cantidad,
+                            Fecha = x.FechaRegistro
+                        };
+            dataGridView2.DataSource = query.ToList();
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -72,6 +73,13 @@ namespace LateosDB.View
             {
                 MessageBox.Show("Se agrego con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 UpdateGrid();
+                UpdateComboCompraProducto();
+                UpdateGrid1();
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                textBox5.Text = "";              
             }
         }
         //----------------------------------------
@@ -111,6 +119,13 @@ namespace LateosDB.View
             {
                 MessageBox.Show("Se agrego con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 UpdateGrid();
+                UpdateComboCompraProducto();
+                UpdateGrid1();
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                textBox5.Text = "";
             }
         }
 
@@ -129,5 +144,8 @@ namespace LateosDB.View
             var query = busqueda.Where(x => x.cantidad.ToLower().Contains(textBox5.Text.ToLower())).ToList();
             dataGridView1.DataSource = query;
         }
+
+
+
     }
 }

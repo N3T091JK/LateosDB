@@ -176,11 +176,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label6.Location = new System.Drawing.Point(80, 38);
+            this.label6.Location = new System.Drawing.Point(40, 38);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 13);
+            this.label6.Size = new System.Drawing.Size(100, 13);
             this.label6.TabIndex = 42;
-            this.label6.Text = "Producto";
+            this.label6.Text = "Marca del Producto";
             // 
             // dataGridView2
             // 
@@ -307,7 +307,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(35, 38);
+            this.textBox5.Location = new System.Drawing.Point(225, 38);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(362, 20);
             this.textBox5.TabIndex = 9;
