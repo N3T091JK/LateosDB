@@ -15,6 +15,7 @@ namespace LateosDB.Entities
         [Required]//No permite valores nulos]
         public string Nombre { get; set; }
         [Required]
+        public Decimal CantidaCategoria { get; set; }
         public int IdEstado { get; set; }
         public virtual Estado Estado { get; set; }
         public virtual ICollection<Producto> Productos { get; set; }

@@ -41,7 +41,7 @@ namespace LateosDB.View
                             id = x.IdCompraProducto,
                             cantidad = x.CantidadProductos,
                             PrecioUnitarios = x.PrecioUnitario,
-                            Descuentos = x.Descuento,                  
+                                            
                             CompraProducto = x.CompraProductos.MarcaProducto
                         };
             dataGridView1.DataSource = query.ToList();
@@ -51,10 +51,10 @@ namespace LateosDB.View
         {
             DetalleCompra entity = new DetalleCompra()
             {
-                CantidadProductos = textBox1.Text.Trim(),
-                PrecioUnitario = decimal.Parse(textBox2.Text),
-                Descuento = decimal.Parse(textBox3.Text),              
-                IdCompraProducto = (int)comboBox1.SelectedValue
+                //CantidadProductos = textBox1.Text.Trim(),
+                //PrecioUnitario = decimal.Parse(textBox2.Text),
+                //Descuento = decimal.Parse(textBox3.Text),              
+                //IdCompraProducto = (int)comboBox1.SelectedValue
             };
 
             if (DetalleComprarBL.Instance.Insert(entity))

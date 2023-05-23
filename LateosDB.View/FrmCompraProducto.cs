@@ -26,22 +26,11 @@ namespace LateosDB.View
         {
             UpdateGrid();
             UpdateComboCompraProducto();
-            UpdateGrid1();
+            UpdateComboFactura();
+            UpdateComboDetallefacturaFactura();
         }
 
-        private void UpdateGrid1()
-        {
-            _listado = CompraProductoBL.Instance.SellecALL();
-            var query = from x in _listado
-                        select new
-                        {
-                            Id = x.IdCompraProducto,
-                            MarcaProductos = x.MarcaProducto,
-                            Cantidades = x.Cantidad,
-                            Fecha = x.FechaRegistro
-                        };
-            dataGridView2.DataSource = query.ToList();
-        }
+     
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -58,30 +47,6 @@ namespace LateosDB.View
             Close();
         }
 
-        private void pictureBox3_Click_1(object sender, EventArgs e)
-        {
-            CompraProducto entity = new CompraProducto()
-            {
-                
-                MarcaProducto = textBox1.Text.Trim(),
-                Cantidad = Convert.ToInt32(numericUpDown1.Value),
-                FechaRegistro = dateTimePicker1.Value
-                
-            };
-
-            if (CompraProductoBL.Instance.Insert(entity))
-            {
-                MessageBox.Show("Se agrego con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                UpdateGrid();
-                UpdateComboCompraProducto();
-                UpdateGrid1();
-                textBox1.Text = "";
-                textBox2.Text = "";
-                textBox3.Text = "";
-                textBox4.Text = "";
-                textBox5.Text = "";              
-            }
-        }
         //----------------------------------------
 
         private void UpdateComboCompraProducto()
@@ -90,6 +55,21 @@ namespace LateosDB.View
             comboBox1.ValueMember = "IdCompraProducto";
             comboBox1.DataSource = CompraProductoBL.Instance.SellecALL();
         }
+
+        private void UpdateComboFactura()
+        {
+            comboBox2.DisplayMember =  "Codigo";
+            comboBox2.ValueMember ="IdFactura";
+            comboBox2.DataSource = FacturaBL.Instance.SellecALL();
+        }
+        private void UpdateComboDetallefacturaFactura()
+        {
+            comboBox3.DisplayMember = "subTotal";
+            comboBox3.ValueMember = "IdDetalleFactura";
+            comboBox3.DataSource = DetalleFacturaBL.Instance.SellecALL();
+        }
+
+
         private void UpdateGrid()
         {
             _listado1 = DetalleComprarBL.Instance.SellecALL();
@@ -99,7 +79,6 @@ namespace LateosDB.View
                             id = x.IdCompraProducto,
                             cantidad = x.CantidadProductos,
                             PrecioUnitarios = x.PrecioUnitario,
-                            Descuentos = x.Descuento,
                             CompraProducto = x.CompraProductos.MarcaProducto
                         };
             dataGridView1.DataSource = query.ToList();
@@ -109,23 +88,28 @@ namespace LateosDB.View
         {
             DetalleCompra entity = new DetalleCompra()
             {
-                CantidadProductos = textBox4.Text.Trim(),
+                CantidadProductos = Convert.ToInt32(numericUpDown1.Value),
                 PrecioUnitario = decimal.Parse(textBox2.Text),
-                Descuento = decimal.Parse(textBox3.Text),
                 IdCompraProducto = (int)comboBox1.SelectedValue
             };
-
+            CompraRealizada Variable = new CompraRealizada()
+            {
+                Codigo = textBox1.Text.Trim(),
+                IdDetalleFactura = (int)comboBox3.SelectedValue,
+                IdFactura = (int)comboBox2.SelectedValue
+            };
             if (DetalleComprarBL.Instance.Insert(entity))
             {
-                MessageBox.Show("Se agrego con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                UpdateGrid();
-                UpdateComboCompraProducto();
-                UpdateGrid1();
-                textBox1.Text = "";
-                textBox2.Text = "";
-                textBox3.Text = "";
-                textBox4.Text = "";
-                textBox5.Text = "";
+                if (CompraRealizadaBL.Instance.Insert(Variable))
+                {
+
+                    MessageBox.Show("Se agrego con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    UpdateGrid();
+                    UpdateComboCompraProducto();
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    textBox5.Text = "";
+                }
             }
         }
 
@@ -138,14 +122,15 @@ namespace LateosDB.View
                             id = x.IdCompraProducto,
                             cantidad = x.CantidadProductos,
                             PrecioUnitarios = x.PrecioUnitario,
-                            Descuentos = x.Descuento,
                             CompraProducto = x.CompraProductos.MarcaProducto
                         };
-            var query = busqueda.Where(x => x.cantidad.ToLower().Contains(textBox5.Text.ToLower())).ToList();
+            var query = busqueda.Where(x => x.CompraProducto.ToLower().Contains(textBox5.Text.ToLower())).ToList();
             dataGridView1.DataSource = query;
         }
 
+        private void label7_Click(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

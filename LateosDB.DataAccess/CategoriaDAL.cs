@@ -91,21 +91,24 @@ namespace LateosDB.DataAccess
             bool result = false;
             using (AppDBLateosContext _context = new AppDBLateosContext())
             {
-
-                var query = _context.categorias.FirstOrDefault(x => x.Nombre.Equals(entity.Nombre));
-
-
-                if (query == null)
-                {
-                    _context.Entry(entity).State = EntityState.Modified;
-                    result = _context.SaveChanges() > 0;
-
-                }
-
-                return result;
-
+                _context.Entry(entity).State = EntityState.Modified;
+                result = _context.SaveChanges() > 0;
             }
-
+            return result;
+        }
+        public bool Delete(int id)
+        {
+            using (AppDBLateosContext _context = new AppDBLateosContext())
+            {
+                bool result = false;
+                var query = _context.categorias.FirstOrDefault(x => x.IdCategoria == id);
+                if (query != null)
+                {
+                    _context.categorias.Remove(query);
+                    result = _context.SaveChanges() > 0;
+                }
+                return result;
+            }
 
         }
     }

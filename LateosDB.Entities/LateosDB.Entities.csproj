@@ -55,6 +55,8 @@
     <Compile Include="Categoria.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="CompraProducto.cs" />
+    <Compile Include="CompraRealizada.cs" />
+    <Compile Include="Descuento.cs" />
     <Compile Include="DetalleCompra.cs" />
     <Compile Include="DetalleFactura.cs" />
     <Compile Include="Empleado.cs" />
@@ -63,9 +65,9 @@
     <Compile Include="Factura.cs" />
     <Compile Include="Inventario.cs" />
     <Compile Include="Log.cs" />
-    <Compile Include="Migrations\202305162039583_LateosDBVentas.cs" />
-    <Compile Include="Migrations\202305162039583_LateosDBVentas.designer.cs">
-      <DependentUpon>202305162039583_LateosDBVentas.cs</DependentUpon>
+    <Compile Include="Migrations\202305232043212_LateosDBVentas.cs" />
+    <Compile Include="Migrations\202305232043212_LateosDBVentas.designer.cs">
+      <DependentUpon>202305232043212_LateosDBVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Producto.cs" />
@@ -79,8 +81,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202305162039583_LateosDBVentas.resx">
-      <DependentUpon>202305162039583_LateosDBVentas.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202305232043212_LateosDBVentas.resx">
+      <DependentUpon>202305232043212_LateosDBVentas.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

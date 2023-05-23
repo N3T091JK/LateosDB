@@ -21,7 +21,7 @@ namespace LateosDB.View
             InitializeComponent();
 
         }
-
+        // Realizar el combox de descuento y realizar la tabla de CompraRelacion
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
@@ -31,7 +31,7 @@ namespace LateosDB.View
         {
             UpdateComboCliente();
             UpdateComboUsuario();
-            UpdateComboDetalleFactura();
+            UpdateComboDEscuento();
             UpdateGridDetallesFacturas();
             UpdateGrid();
             UpdateComboProducto();
@@ -48,18 +48,11 @@ namespace LateosDB.View
             comboBox2.ValueMember = "IdUsuario";
             comboBox2.DataSource = UsuarioBL.Instance.SellecALL();
         }
-        private void UpdateComboDetalleFactura()
-        {
-            comboBox4.DisplayMember = "subTotal";
-            comboBox4.ValueMember = "IdDetalleFactura";
-            comboBox4.DataSource = DetalleFacturaBL.Instance.SellecALL();
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
             FacturaImprimir();
-          
-
+            Distanciarmas();
         }
 
 
@@ -72,6 +65,12 @@ namespace LateosDB.View
         }
 
 
+        private void UpdateComboDEscuento()
+        {
+            Porcentaje.DisplayMember = "Nombre";
+            Porcentaje.ValueMember = "IdDescuento";
+            Porcentaje.DataSource = DescuentoBL.Instance.SellecALL();
+        }
 
 
 
@@ -82,70 +81,61 @@ namespace LateosDB.View
             {
                 MontoPago = decimal.Parse(textBox2.Text),
                 MontoTotal = decimal.Parse(MontoTotalText.Text),
-                Descuento = decimal.Parse(DescuentoText.Text),
+                IdDescuento = (int)Porcentaje.SelectedValue,
                 Observacion = textBox5.Text.Trim(),
                 Codigo = textBox6.Text.Trim(),
                 FechaRegistro = dateTimePicker1.Value,
                 IdCliente = (int)comboBox1.SelectedValue,
                 IdUsuario = (int)comboBox2.SelectedValue,
-                IdDetalleFactura = (int)comboBox4.SelectedValue
+      
             };
-
-            if (FacturaBL.Instance.Insert(entity))
-            {
-                MessageBox.Show("Se agrego con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                UpdateComboCliente();
-                UpdateComboUsuario();
-                UpdateComboDetalleFactura();
-                UpdateGridDetallesFacturas();
-                UpdateGrid();
-                UpdateComboProducto();
-                textBox1.Text = "";
-                textBox2.Text = "";
-                MontoTotalText.Text = "";
-                DescuentoText.Text = "";
-                textBox5.Text = "";
-                textBox6.Text = "";
-                textBox7.Text = "";    
-            }
-
-
-        }
-        private void DetallesFacturaImprimir()
-        {
-
-                DetalleFactura entity = new DetalleFactura()
+                DetalleFactura variable = new DetalleFactura()
             {
 
                 subTotal = decimal.Parse(textBox7.Text),
                 Cantidad = Convert.ToInt32(numericUpDown2.Value),
-                IdProducto = (int)comboBox3.SelectedValue,
+                IdProducto = (int)comboBox3.SelectedValue
 
             };
 
-            if (DetalleFacturaBL.Instance.Insert(entity))
+            if (FacturaBL.Instance.Insert(entity))
             {
-                MessageBox.Show("Se agrego con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                UpdateComboCliente();
-                UpdateComboUsuario();
-                UpdateComboDetalleFactura();
-                UpdateGridDetallesFacturas();
-                UpdateGrid();
-                UpdateComboProducto();
-                textBox1.Text = "";
-                textBox2.Text = "";
-                MontoTotalText.Text = "";
-                DescuentoText.Text = "";
-                textBox5.Text = "";
-                textBox6.Text = "";
-                textBox7.Text = "";
+                if (DetalleFacturaBL.Instance.Insert(variable))
+                {
+                    MessageBox.Show("Se agrego con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    UpdateComboCliente();
+                    UpdateComboUsuario();
+                    UpdateComboDEscuento();
+                    UpdateGridDetallesFacturas();
+                    UpdateGrid();
+                    UpdateComboProducto();
+                    UpdateGridDetallesFacturas();
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    MontoTotalText.Text = "";
+                    Porcentaje.Text = "";
+                    textBox5.Text = "";
+                    textBox6.Text = "";
+                    textBox7.Text = "";
+                }
             }
+
+        }
+
+        private void Distanciarmas()
+        {
+            DetallesFacturaImprimir();
+        }
+        private void DetallesFacturaImprimir()
+        {
+
+            
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            DetallesFacturaImprimir();
+           
         }
 
 
@@ -161,7 +151,7 @@ namespace LateosDB.View
                             Productos = x.Productos.Nombre
 
                         };
-            dataGridView2.DataSource = query.ToList();
+       
         }
         private void UpdateGrid()
         {
@@ -173,12 +163,11 @@ namespace LateosDB.View
                             codigos = x.Codigo,
                             Monto = x.MontoPago,
                             MotoTotales = x.MontoTotal,
-                            Descuentos = x.Descuento,
                             Oservaciones = x.Observacion,
                             Fecha = x.FechaRegistro,
                             Cliente = x.Clientes.Nombre,
                             Usuario = x.Usuarios.Nombre,
-                            DetalleFactura = x.DetalleFactura.subTotal
+                            descuento = x.Descuentos.Nombre
                         };
             dataGridView1.DataSource = query.ToList();
         }
@@ -231,12 +220,12 @@ namespace LateosDB.View
                             codigos = x.Codigo,
                             Monto = x.MontoPago,
                             MotoTotales = x.MontoTotal,
-                            Descuentos = x.Descuento,
+                            Descuento = x.Descuentos.Nombre,
                             Oservaciones = x.Observacion,
                             Fecha = x.FechaRegistro,
                             Cliente = x.Clientes.Nombre,
                             Usuario = x.Usuarios.Nombre,
-                            DetalleFactura = x.DetalleFactura.subTotal
+                           
                         };
             var query = busqueda.Where(x => x.codigos.ToLower().Contains(textBox1.Text.ToLower())).ToList();
             dataGridView1.DataSource = query;

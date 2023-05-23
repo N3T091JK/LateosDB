@@ -105,5 +105,55 @@ namespace LateosDB.View
                 textBox3.Text = "";
             }
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.CurrentRow.Cells["Editar"].Selected)
+            {
+              
+                int id = (int)dataGridView1.CurrentRow.Cells[2].Value;
+                string nombre = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                string apellido = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                string Direccion = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                DateTime Fecha = dateTimePicker1.Value;
+                int IdEstado = _listado.FirstOrDefault(x => x.IdEmpleado.Equals(id)).IdEstado;
+                Empleado entity = new Empleado()
+                {
+                    IdEmpleado = id,
+                    Nombre = nombre,
+                    Apellido = apellido,
+                    Direccion = Direccion,
+                    FechaRegistro = Fecha,
+                    IdEstado = IdEstado
+
+                };
+                FrmEditarEmpleado frm = new FrmEditarEmpleado(entity);
+                frm.ShowDialog();
+                UpdateGrid();
+            }
+
+            if (dataGridView1.Rows[e.RowIndex].Cells["Eliminar"].Selected)
+            {
+                int id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+                DialogResult dr = MessageBox.Show("Desea eliminar el registro actual?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    if (EmpleadoBL.Instance.Delete(id))
+                    {
+                        MessageBox.Show("Se elimino con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                }
+                UpdateGrid();
+
+            }
+        }
+
+
+
+
+
+
+
     }
 }

@@ -11,12 +11,9 @@ namespace LateosDB.Entities
     {
         [Key]
         public int IdDetalleCompra { get; set; }
-        [MaxLength(80)]
-
         [Required]
-        public String CantidadProductos { get; set; }
+        public int CantidadProductos { get; set; }
         public Decimal PrecioUnitario { get; set; }
-        public Decimal Descuento { get; set; }
         public int IdCompraProducto { get; set; }
         public virtual CompraProducto CompraProductos { get; set; }
 

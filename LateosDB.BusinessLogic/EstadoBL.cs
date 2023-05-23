@@ -66,5 +66,19 @@ namespace LateosDB.BusinessLogic
             }
             return result;
         }
+
+        public bool Delete(int id)
+        {
+            bool result = false;
+            try
+            {
+                result = EstadoDAL.Instance.Delete(id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error. " + ex.Message);
+            }
+            return result;
+        }
     }
 }
