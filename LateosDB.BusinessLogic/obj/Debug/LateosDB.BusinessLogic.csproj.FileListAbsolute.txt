@@ -16,3 +16,21 @@ C:\Users\HOME\Desktop\Proyecto Lateos\LateosDB\LateosDB.BusinessLogic\obj\Debug\
 C:\Users\HOME\Desktop\Proyecto Lateos\LateosDB\LateosDB.BusinessLogic\obj\Debug\LateosDB.BusinessLogic.csproj.CopyComplete
 C:\Users\HOME\Desktop\Proyecto Lateos\LateosDB\LateosDB.BusinessLogic\obj\Debug\LateosDB.BusinessLogic.dll
 C:\Users\HOME\Desktop\Proyecto Lateos\LateosDB\LateosDB.BusinessLogic\obj\Debug\LateosDB.BusinessLogic.pdb
+C:\Users\HOME\Desktop\LateosDB\LateosDB.BusinessLogic\bin\Debug\LateosDB.BusinessLogic.dll.config
+C:\Users\HOME\Desktop\LateosDB\LateosDB.BusinessLogic\bin\Debug\LateosDB.BusinessLogic.dll
+C:\Users\HOME\Desktop\LateosDB\LateosDB.BusinessLogic\bin\Debug\LateosDB.BusinessLogic.pdb
+C:\Users\HOME\Desktop\LateosDB\LateosDB.BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Users\HOME\Desktop\LateosDB\LateosDB.BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HOME\Desktop\LateosDB\LateosDB.BusinessLogic\bin\Debug\LateosDB.DataAccess.dll
+C:\Users\HOME\Desktop\LateosDB\LateosDB.BusinessLogic\bin\Debug\LateosDB.Entities.dll
+C:\Users\HOME\Desktop\LateosDB\LateosDB.BusinessLogic\bin\Debug\LateosDB.DataAccess.pdb
+C:\Users\HOME\Desktop\LateosDB\LateosDB.BusinessLogic\bin\Debug\LateosDB.DataAccess.dll.config
+C:\Users\HOME\Desktop\LateosDB\LateosDB.BusinessLogic\bin\Debug\LateosDB.Entities.pdb
+C:\Users\HOME\Desktop\LateosDB\LateosDB.BusinessLogic\bin\Debug\LateosDB.Entities.dll.config
+C:\Users\HOME\Desktop\LateosDB\LateosDB.BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Users\HOME\Desktop\LateosDB\LateosDB.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HOME\Desktop\LateosDB\LateosDB.BusinessLogic\obj\Debug\LateosDB.BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\HOME\Desktop\LateosDB\LateosDB.BusinessLogic\obj\Debug\LateosDB.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\HOME\Desktop\LateosDB\LateosDB.BusinessLogic\obj\Debug\LateosDB.BusinessLogic.csproj.CopyComplete
+C:\Users\HOME\Desktop\LateosDB\LateosDB.BusinessLogic\obj\Debug\LateosDB.BusinessLogic.dll
+C:\Users\HOME\Desktop\LateosDB\LateosDB.BusinessLogic\obj\Debug\LateosDB.BusinessLogic.pdb

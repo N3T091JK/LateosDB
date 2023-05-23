@@ -86,3 +86,13 @@ C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.csproj.Core
 C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.csproj.CopyComplete
 C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.exe
 C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.pdb
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.FrmBuscar.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.FrmDescuento1.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.FrmBusquedasDetablas.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.InicioLog.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.EditarRol.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.FrmEditarEstado.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.FrmEditarUsuario.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.FrmEditarEmpleado.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.FrmEditarCliente.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.View\obj\Debug\LateosDB.View.FrmEditarPorcentaje.resources

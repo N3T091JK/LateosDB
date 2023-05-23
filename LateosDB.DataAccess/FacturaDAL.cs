@@ -36,7 +36,7 @@ namespace LateosDB.DataAccess
             {
                 result = _context.facturas.Include(x => x.Clientes).ToList();
                 result = _context.facturas.Include(x => x.Usuarios).ToList();
-                result = _context.facturas.Include(x => x.DetalleFactura).ToList();
+                result = _context.facturas.Include(x => x.Descuentos).ToList();
             }
             return result;
         }
@@ -74,31 +74,32 @@ namespace LateosDB.DataAccess
             }
         }
 
+
         public bool Update(Factura entity)
         {
             bool result = false;
             using (AppDBLateosContext _context = new AppDBLateosContext())
             {
-
-                var query = _context.facturas.FirstOrDefault(x => x.IdFactura.Equals(entity.IdFactura));
-
-
-                if (query == null)
+                _context.Entry(entity).State = EntityState.Modified;
+                result = _context.SaveChanges() > 0;
+            }
+            return result;
+        }
+        public bool Delete(int id)
+        {
+            using (AppDBLateosContext _context = new AppDBLateosContext())
+            {
+                bool result = false;
+                var query = _context.facturas.FirstOrDefault(x => x.IdFactura == id);
+                if (query != null)
                 {
-                    _context.Entry(entity).State = EntityState.Modified;
+                    _context.facturas.Remove(query);
                     result = _context.SaveChanges() > 0;
-
                 }
-
                 return result;
-
             }
 
-
         }
-
-
-
 
 
 

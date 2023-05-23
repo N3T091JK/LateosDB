@@ -57,6 +57,8 @@
     <Compile Include="Class1.cs" />
     <Compile Include="ClienteBL.cs" />
     <Compile Include="CompraProductoBL.cs" />
+    <Compile Include="CompraRealizadaBL.cs" />
+    <Compile Include="DescuentoBL.cs" />
     <Compile Include="DetalleComprarBL.cs" />
     <Compile Include="DetalleFacturaBL.cs" />
     <Compile Include="EmpleadoBL.cs" />

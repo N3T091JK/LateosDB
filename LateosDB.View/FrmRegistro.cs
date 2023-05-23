@@ -127,6 +127,14 @@ namespace LateosDB.View
             {
                 MessageBox.Show("Se agrego con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 UpdateGrid();
+                UpdateComboCLiente();
+                UpdateComboEmpleado();
+                UpdateComboCompraProducto();
+                UpdateComboUsuario();
+                UpdateComboFactura();
+                UpdateComboRols();
+
+
             }
         }
     }

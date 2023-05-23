@@ -82,26 +82,32 @@ namespace LateosDB.DataAccess
 
 
         }
+
         public bool Update(Inventario entity)
         {
             bool result = false;
             using (AppDBLateosContext _context = new AppDBLateosContext())
             {
-
-                var query = _context.inventarios.FirstOrDefault(x => x.Stock.Equals(entity.Stock));
-
-
-                if (query == null)
+                _context.Entry(entity).State = EntityState.Modified;
+                result = _context.SaveChanges() > 0;
+            }
+            return result;
+        }
+        public bool Delete(int id)
+        {
+            using (AppDBLateosContext _context = new AppDBLateosContext())
+            {
+                bool result = false;
+                var query = _context.inventarios.FirstOrDefault(x => x.IdInventario == id);
+                if (query != null)
                 {
-                    _context.Entry(entity).State = EntityState.Modified;
+                    _context.inventarios.Remove(query);
                     result = _context.SaveChanges() > 0;
-
                 }
-
                 return result;
             }
-        }
 
+        }
 
 
 

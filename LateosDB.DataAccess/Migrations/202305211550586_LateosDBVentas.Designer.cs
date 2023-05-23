@@ -13,7 +13,7 @@ namespace LateosDB.Entities.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202305162039583_LateosDBVentas"; }
+            get { return "202305211550586_LateosDBVentas"; }
         }
         
         string IMigrationMetadata.Source

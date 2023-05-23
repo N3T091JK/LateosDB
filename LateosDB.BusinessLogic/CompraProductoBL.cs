@@ -67,6 +67,18 @@ namespace LateosDB.BusinessLogic
             }
             return result;
         }
-
+        public bool Delete(int id)
+        {
+            bool result = false;
+            try
+            {
+                result = ComprarProductoDAL.Instance.Delete(id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error. " + ex.Message);
+            }
+            return result;
+        }
     }
 }

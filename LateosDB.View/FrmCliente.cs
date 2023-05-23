@@ -78,6 +78,46 @@ namespace LateosDB.View
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (dataGridView1.CurrentRow.Cells["Editar"].Selected)
+            {
+
+                int id = (int)dataGridView1.CurrentRow.Cells[2].Value;
+                string nombre = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                DateTime Fecha = dateTimePicker1.Value;
+                int IdEstado = _listado.FirstOrDefault(x => x.IdCliente.Equals(id)).IdEstado;
+                Cliente entity = new Cliente()
+                {
+                    IdCliente = id,
+                    Nombre = nombre,
+                    FechaRegistro = Fecha,
+                    IdEstado = IdEstado
+
+                };
+                FrmEditarCliente frm = new FrmEditarCliente(entity);
+                frm.ShowDialog();
+                UpdateGrid();
+            }
+
+            if (dataGridView1.Rows[e.RowIndex].Cells["Eliminar"].Selected)
+            {
+                int id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+                DialogResult dr = MessageBox.Show("Desea eliminar el registro actual?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    if (ClienteBL.Instance.Delete(id))
+                    {
+                        MessageBox.Show("Se elimino con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                }
+                UpdateGrid();
+
+            }
+
+
+
+
+
 
         }
 

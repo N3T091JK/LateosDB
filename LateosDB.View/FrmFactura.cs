@@ -58,12 +58,12 @@ namespace LateosDB.View
                             codigos = x.Codigo,
                             Monto = x.MontoPago,
                             MotoTotales = x.MontoTotal,
-                            Descuentos = x.Descuento,
+                      
                             Oservaciones = x.Observacion,
                             Fecha = x.FechaRegistro,
                             Cliente = x.Clientes.Nombre,
                             Usuario = x.Usuarios.Nombre,
-                            DetalleFactura = x.DetalleFactura.subTotal
+                           
                         };
             dataGridView1.DataSource = query.ToList();
         }
@@ -78,13 +78,13 @@ namespace LateosDB.View
             {
                 MontoPago = decimal.Parse(textBox1.Text),
                 MontoTotal = decimal.Parse(textBox2.Text),
-                Descuento = decimal.Parse(textBox3.Text),
+       
                 Observacion = textBox4.Text.Trim(),
                 Codigo = textBox5.Text.Trim(),
                 FechaRegistro = dateTimePicker1.Value,
                 IdCliente = (int)comboBox1.SelectedValue,
                 IdUsuario = (int)comboBox2.SelectedValue,
-                IdDetalleFactura = (int)comboBox3.SelectedValue
+
             };
 
             if (FacturaBL.Instance.Insert(entity))

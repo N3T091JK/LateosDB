@@ -29,5 +29,7 @@ namespace LateosDB.Entities.AppContext
         public DbSet<Usuario> usuarios { get; set; }
         public DbSet<Log> Logs { get; set; }
         public DbSet<Registro> Registros { get; set; }
+        public DbSet<CompraRealizada> CompraRealizadas { get; set; }
+        public DbSet<Descuento> descuentos { get; set; }
     }
 }
