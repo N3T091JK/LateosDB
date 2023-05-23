@@ -74,6 +74,24 @@
     <Compile Include="Cero.Designer.cs">
       <DependentUpon>Cero.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditarRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarRol.Designer.cs">
+      <DependentUpon>EditarRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscar.Designer.cs">
+      <DependentUpon>FrmBuscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBusquedasDetablas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBusquedasDetablas.Designer.cs">
+      <DependentUpon>FrmBusquedasDetablas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +110,12 @@
     <Compile Include="FrmComprar.Designer.cs">
       <DependentUpon>FrmComprar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDescuento1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDescuento1.Designer.cs">
+      <DependentUpon>FrmDescuento1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDetalleComprar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +133,36 @@
     </Compile>
     <Compile Include="FrmDisponible.Designer.cs">
       <DependentUpon>FrmDisponible.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEditarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEditarCliente.Designer.cs">
+      <DependentUpon>FrmEditarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEditarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEditarEmpleado.Designer.cs">
+      <DependentUpon>FrmEditarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEditarEstado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEditarEstado.Designer.cs">
+      <DependentUpon>FrmEditarEstado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEditarPorcentaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEditarPorcentaje.Designer.cs">
+      <DependentUpon>FrmEditarPorcentaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEditarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEditarUsuario.Designer.cs">
+      <DependentUpon>FrmEditarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmEmpleado.cs">
       <SubType>Form</SubType>
@@ -176,6 +230,12 @@
     <Compile Include="FrmUsuario.Designer.cs">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="InicioLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InicioLog.Designer.cs">
+      <DependentUpon>InicioLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validardatos.cs" />
@@ -188,6 +248,15 @@
     <EmbeddedResource Include="Cero.resx">
       <DependentUpon>Cero.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditarRol.resx">
+      <DependentUpon>EditarRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscar.resx">
+      <DependentUpon>FrmBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBusquedasDetablas.resx">
+      <DependentUpon>FrmBusquedasDetablas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +266,9 @@
     <EmbeddedResource Include="FrmComprar.resx">
       <DependentUpon>FrmComprar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmDescuento1.resx">
+      <DependentUpon>FrmDescuento1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDetalleComprar.resx">
       <DependentUpon>FrmDetalleComprar.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,6 +277,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDisponible.resx">
       <DependentUpon>FrmDisponible.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEditarCliente.resx">
+      <DependentUpon>FrmEditarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEditarEmpleado.resx">
+      <DependentUpon>FrmEditarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEditarEstado.resx">
+      <DependentUpon>FrmEditarEstado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEditarPorcentaje.resx">
+      <DependentUpon>FrmEditarPorcentaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEditarUsuario.resx">
+      <DependentUpon>FrmEditarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEmpleado.resx">
       <DependentUpon>FrmEmpleado.cs</DependentUpon>
@@ -238,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUsuario.resx">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InicioLog.resx">
+      <DependentUpon>InicioLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -308,6 +398,66 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cesta-de-la-compra.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recibo.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\productos-lacteos.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paleta.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ventas.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cajero.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peluqueria.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\subir.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\acceso.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ajustes.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id-insignia.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\acceso1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id-insignia1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ajustes1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ajustes2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\programador.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iniciar-sesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar-codigo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -13,6 +13,7 @@
                     {
                         IdCategoria = c.Int(nullable: false, identity: true),
                         Nombre = c.String(nullable: false, maxLength: 40),
+                        CantidaCategoria = c.Decimal(nullable: false, precision: 18, scale: 2),
                         IdEstado = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.IdCategoria)
@@ -49,19 +50,33 @@
                         Codigo = c.String(nullable: false),
                         MontoPago = c.Decimal(nullable: false, precision: 18, scale: 2),
                         MontoTotal = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        Descuento = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Observacion = c.String(nullable: false),
                         FechaRegistro = c.DateTime(nullable: false),
                         IdCliente = c.Int(nullable: false),
                         IdUsuario = c.Int(nullable: false),
-                        IdDetalleFactura = c.Int(nullable: false),
+                        IdDescuento = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.IdFactura)
                 .ForeignKey("dbo.Clientes", t => t.IdCliente)
-                .ForeignKey("dbo.DetalleFacturas", t => t.IdDetalleFactura)
+                .ForeignKey("dbo.Descuentoes", t => t.IdDescuento)
                 .ForeignKey("dbo.Usuarios", t => t.IdUsuario)
                 .Index(t => t.IdCliente)
                 .Index(t => t.IdUsuario)
+                .Index(t => t.IdDescuento);
+            
+            CreateTable(
+                "dbo.CompraRealizadas",
+                c => new
+                    {
+                        IdComprar = c.Int(nullable: false, identity: true),
+                        Codigo = c.String(nullable: false, maxLength: 80),
+                        IdFactura = c.Int(nullable: false),
+                        IdDetalleFactura = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.IdComprar)
+                .ForeignKey("dbo.DetalleFacturas", t => t.IdDetalleFactura)
+                .ForeignKey("dbo.Facturas", t => t.IdFactura)
+                .Index(t => t.IdFactura)
                 .Index(t => t.IdDetalleFactura);
             
             CreateTable(
@@ -111,6 +126,16 @@
                 .Index(t => t.Productos_IdProducto);
             
             CreateTable(
+                "dbo.Descuentoes",
+                c => new
+                    {
+                        IdDescuento = c.Int(nullable: false, identity: true),
+                        Nombre = c.String(nullable: false, maxLength: 80),
+                        Porcentaje = c.Decimal(nullable: false, precision: 18, scale: 2),
+                    })
+                .PrimaryKey(t => t.IdDescuento);
+            
+            CreateTable(
                 "dbo.Registroes",
                 c => new
                     {
@@ -153,9 +178,8 @@
                 c => new
                     {
                         IdDetalleCompra = c.Int(nullable: false, identity: true),
-                        CantidadProductos = c.String(nullable: false, maxLength: 80),
+                        CantidadProductos = c.Int(nullable: false),
                         PrecioUnitario = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        Descuento = c.Decimal(nullable: false, precision: 18, scale: 2),
                         IdCompraProducto = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.IdDetalleCompra)
@@ -250,11 +274,13 @@
             DropForeignKey("dbo.Registroes", "IdCompraProducto", "dbo.CompraProductoes");
             DropForeignKey("dbo.DetalleCompras", "IdCompraProducto", "dbo.CompraProductoes");
             DropForeignKey("dbo.Registroes", "IdCliente", "dbo.Clientes");
+            DropForeignKey("dbo.Facturas", "IdDescuento", "dbo.Descuentoes");
+            DropForeignKey("dbo.CompraRealizadas", "IdFactura", "dbo.Facturas");
             DropForeignKey("dbo.Inventarios", "Productos_IdProducto", "dbo.Productoes");
             DropForeignKey("dbo.Productoes", "IdEstado", "dbo.Estadoes");
             DropForeignKey("dbo.DetalleFacturas", "IdProducto", "dbo.Productoes");
             DropForeignKey("dbo.Productoes", "IdCategoria", "dbo.Categorias");
-            DropForeignKey("dbo.Facturas", "IdDetalleFactura", "dbo.DetalleFacturas");
+            DropForeignKey("dbo.CompraRealizadas", "IdDetalleFactura", "dbo.DetalleFacturas");
             DropForeignKey("dbo.Facturas", "IdCliente", "dbo.Clientes");
             DropForeignKey("dbo.Clientes", "IdEstado", "dbo.Estadoes");
             DropForeignKey("dbo.Categorias", "IdEstado", "dbo.Estadoes");
@@ -273,7 +299,9 @@
             DropIndex("dbo.Productoes", new[] { "IdCategoria" });
             DropIndex("dbo.Productoes", new[] { "IdEstado" });
             DropIndex("dbo.DetalleFacturas", new[] { "IdProducto" });
-            DropIndex("dbo.Facturas", new[] { "IdDetalleFactura" });
+            DropIndex("dbo.CompraRealizadas", new[] { "IdDetalleFactura" });
+            DropIndex("dbo.CompraRealizadas", new[] { "IdFactura" });
+            DropIndex("dbo.Facturas", new[] { "IdDescuento" });
             DropIndex("dbo.Facturas", new[] { "IdUsuario" });
             DropIndex("dbo.Facturas", new[] { "IdCliente" });
             DropIndex("dbo.Clientes", new[] { "IdEstado" });
@@ -286,9 +314,11 @@
             DropTable("dbo.DetalleCompras");
             DropTable("dbo.CompraProductoes");
             DropTable("dbo.Registroes");
+            DropTable("dbo.Descuentoes");
             DropTable("dbo.Inventarios");
             DropTable("dbo.Productoes");
             DropTable("dbo.DetalleFacturas");
+            DropTable("dbo.CompraRealizadas");
             DropTable("dbo.Facturas");
             DropTable("dbo.Clientes");
             DropTable("dbo.Estadoes");

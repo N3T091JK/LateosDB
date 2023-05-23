@@ -15,3 +15,35 @@ C:\Users\HOME\Desktop\Proyecto Lateos\LateosDB\LateosDB.DataAccess\obj\Debug\Lat
 C:\Users\HOME\Desktop\Proyecto Lateos\LateosDB\LateosDB.DataAccess\obj\Debug\LateosDB.DataAccess.pdb
 C:\Users\HOME\Desktop\Proyecto Lateos\LateosDB\LateosDB.DataAccess\obj\Debug\LateosDB.DataAccess.csproj.GenerateResource.cache
 C:\Users\HOME\Desktop\Proyecto Lateos\LateosDB\LateosDB.DataAccess\obj\Debug\LateosDB.Entities.Migrations.LateosDBVentas.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.DataAccess\bin\Debug\LateosDB.DataAccess.dll.config
+C:\Users\HOME\Desktop\LateosDB\LateosDB.DataAccess\bin\Debug\LateosDB.DataAccess.dll
+C:\Users\HOME\Desktop\LateosDB\LateosDB.DataAccess\bin\Debug\LateosDB.DataAccess.pdb
+C:\Users\HOME\Desktop\LateosDB\LateosDB.DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\HOME\Desktop\LateosDB\LateosDB.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HOME\Desktop\LateosDB\LateosDB.DataAccess\bin\Debug\LateosDB.Entities.dll
+C:\Users\HOME\Desktop\LateosDB\LateosDB.DataAccess\bin\Debug\LateosDB.Entities.pdb
+C:\Users\HOME\Desktop\LateosDB\LateosDB.DataAccess\bin\Debug\LateosDB.Entities.dll.config
+C:\Users\HOME\Desktop\LateosDB\LateosDB.DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\HOME\Desktop\LateosDB\LateosDB.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HOME\Desktop\LateosDB\LateosDB.DataAccess\obj\Debug\LateosDB.DataAccess.csproj.AssemblyReference.cache
+C:\Users\HOME\Desktop\LateosDB\LateosDB.DataAccess\obj\Debug\LateosDB.Entities.Migrations.LateosDBVentas.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.DataAccess\obj\Debug\LateosDB.DataAccess.csproj.GenerateResource.cache
+C:\Users\HOME\Desktop\LateosDB\LateosDB.DataAccess\obj\Debug\LateosDB.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\HOME\Desktop\LateosDB\LateosDB.DataAccess\obj\Debug\LateosDB.DataAccess.csproj.CopyComplete
+C:\Users\HOME\Desktop\LateosDB\LateosDB.DataAccess\obj\Debug\LateosDB.DataAccess.dll
+C:\Users\HOME\Desktop\LateosDB\LateosDB.DataAccess\obj\Debug\LateosDB.DataAccess.pdb
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.DataAccess\bin\Debug\LateosDB.DataAccess.dll.config
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.DataAccess\bin\Debug\LateosDB.DataAccess.dll
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.DataAccess\bin\Debug\LateosDB.DataAccess.pdb
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.DataAccess\bin\Debug\LateosDB.Entities.dll
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.DataAccess\bin\Debug\LateosDB.Entities.pdb
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.DataAccess\bin\Debug\LateosDB.Entities.dll.config
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.DataAccess\obj\Debug\LateosDB.DataAccess.csproj.AssemblyReference.cache
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.DataAccess\obj\Debug\LateosDB.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.DataAccess\obj\Debug\LateosDB.DataAccess.csproj.CopyComplete
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.DataAccess\obj\Debug\LateosDB.DataAccess.dll
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.DataAccess\obj\Debug\LateosDB.DataAccess.pdb

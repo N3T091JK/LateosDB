@@ -37,6 +37,7 @@ namespace LateosDB.View
                         {
                             id = x.IdCategoria,
                             Nombres = x.Nombre,
+                            Litros = x.CantidaCategoria,
                             Estado = x.Estado.Nombre
                         };
             dataGridView1.DataSource = query.ToList();
@@ -62,6 +63,7 @@ namespace LateosDB.View
             Categoria entity = new Categoria()
             {
                 Nombre = textBox2.Text.Trim(),
+                CantidaCategoria = decimal.Parse(textBox3.Text),
                 IdEstado = (int)comboBox1.SelectedValue
            };
 

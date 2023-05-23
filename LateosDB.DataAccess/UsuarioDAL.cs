@@ -99,29 +99,32 @@ namespace LateosDB.DataAccess
 
         }
 
+
         public bool Update(Usuario entity)
         {
             bool result = false;
             using (AppDBLateosContext _context = new AppDBLateosContext())
             {
-
-                var query = _context.usuarios.FirstOrDefault(x => x.IdUsuario.Equals(entity.IdUsuario));
-
-
-                if (query == null)
-                {
-                    _context.Entry(entity).State = EntityState.Modified;
-                    result = _context.SaveChanges() > 0;
-
-                }
-
-                return result;
-
-
-
+                _context.Entry(entity).State = EntityState.Modified;
+                result = _context.SaveChanges() > 0;
             }
+            return result;
         }
+        public bool Delete(int id)
+        {
+            using (AppDBLateosContext _context = new AppDBLateosContext())
+            {
+                bool result = false;
+                var query = _context.usuarios.FirstOrDefault(x => x.IdUsuario == id);
+                if (query != null)
+                {
+                    _context.usuarios.Remove(query);
+                    result = _context.SaveChanges() > 0;
+                }
+                return result;
+            }
 
+        }
 
 
 

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace LateosDB.DataAccess
 {
@@ -66,6 +67,31 @@ namespace LateosDB.DataAccess
 
         }
 
+        public bool Update(Empresa entity)
+        {
+            bool result = false;
+            using (AppDBLateosContext _context = new AppDBLateosContext())
+            {
+                _context.Entry(entity).State = EntityState.Modified;
+                result = _context.SaveChanges() > 0;
+            }
+            return result;
+        }
+        public bool Delete(int id)
+        {
+            using (AppDBLateosContext _context = new AppDBLateosContext())
+            {
+                bool result = false;
+                var query = _context.empresas.FirstOrDefault(x => x.IdEmpresa == id);
+                if (query != null)
+                {
+                    _context.empresas.Remove(query);
+                    result = _context.SaveChanges() > 0;
+                }
+                return result;
+            }
+
+        }
 
 
     }

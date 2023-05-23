@@ -16,7 +16,8 @@ namespace LateosDB.View
     public partial class FrmDisponible : Form
     {
         private List<Producto> _listado1;
-        private List<Categoria> _listado2;
+        private List<CompraProducto> _listado2;
+
         Validardatos val = new Validardatos();
         public FrmDisponible()
         {
@@ -28,8 +29,7 @@ namespace LateosDB.View
             UpdateComboEstado();
             UpdateComboCategoria();
             UpdateGrid();
-            UpdateGridCategory();
-            UpdateCombo();
+
         }
         private void UpdateComboEstado()
         {
@@ -83,70 +83,38 @@ namespace LateosDB.View
                 IdCategoria = (int)comboBox1.SelectedValue,
 
             };
+            CompraProducto Variable = new CompraProducto()
+            {
+
+                MarcaProducto = textBox6.Text.Trim(),
+                Cantidad = Convert.ToInt32(numericUpDown1.Value),
+                FechaRegistro = dateTimePicker2.Value
+
+            };
 
             if (ProductoBL.Instance.Insert(entity))
             {
-                MessageBox.Show("Se agrego con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                UpdateComboEstado();
-                UpdateComboCategoria();
-                UpdateGrid();
-                UpdateGridCategory();
-                UpdateCombo();
-                textBox1.Text = "";
-                textBox2.Text = "";
-                textBox3.Text = "";
-                textBox4.Text = "";
-                textBox6.Text = "";
-                textBox5.Text = "";
+                if (CompraProductoBL.Instance.Insert(Variable))
+                {
+                    MessageBox.Show("Se agrego con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    UpdateComboEstado();
+                    UpdateComboCategoria();
+                    UpdateGrid();
+
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    textBox3.Text = "";
+                    textBox4.Text = "";
+                    textBox6.Text = "";
+                    textBox5.Text = "";
+                }
             }
         }
+    
         //---------------categoria-----------------
 
-        private void UpdateGridCategory()
-        {
-            _listado2 = CategoriaBL.Instance.SellecALL();
-            var query = from x in _listado2
-                        select new
-                        {
-                            id = x.IdCategoria,
-                            Nombres = x.Nombre,
-                            Estado = x.Estado.Nombre
-                        };
-            dataGridView2.DataSource = query.ToList();
-        }
-        private void UpdateCombo()
-        {
-            comboBox2.DisplayMember = "Nombre";
-            comboBox2.ValueMember = "IdEstado";
-            comboBox2.DataSource = EstadoBL.Instance.SellecALL();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Categoria entity = new Categoria()
-            {
-                Nombre = textBox6.Text.Trim(),
-                IdEstado = (int)comboBox2.SelectedValue
-            };
-
-            if (CategoriaBL.Instance.Insert(entity))
-            {
-                MessageBox.Show("Se agrego con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                UpdateComboEstado();
-                UpdateComboCategoria();
-                UpdateGrid();
-                UpdateGridCategory();
-                UpdateCombo();
-                textBox1.Text = "";
-                textBox2.Text = "";
-                textBox3.Text = "";
-                textBox4.Text = "";
-                textBox6.Text = "";
-                textBox5.Text = "";
-            }
-
-
-        }
+       
+       
 
         private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
         {

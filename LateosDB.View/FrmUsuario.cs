@@ -9,11 +9,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LateosDB.View
 {
     public partial class FrmUsuario : Form
     {
+        int Id = 0;
         private List<Usuario> _listado;
         public FrmUsuario()
         {
@@ -47,6 +49,7 @@ namespace LateosDB.View
                             //Eliminar cantidad de entities
                             //cantidade = x.cantidades,
                             Rolt = x.Rols.Roles
+
 
                         };
             dataGridView1.DataSource = query.ToList();
@@ -99,6 +102,48 @@ namespace LateosDB.View
                 textBox2.Text = "";
                 textBox3.Text = "";
             }
+        }
+        //MontoTotal = decimal.Parse(textBox2.Text),
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.CurrentRow.Cells["Editar"].Selected)
+            {
+                int id = (int)dataGridView1.CurrentRow.Cells[2].Value;
+                string nombre = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                string correos = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                string Clave = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                //decimal moneda = decimal.Parse(dataGridView1.CurrentRow.Cells[5].Value.ToString());
+                int IdRol = _listado.FirstOrDefault(x => x.IdUsuario.Equals(id)).IdRol;
+                Usuario entity = new Usuario()
+                {
+                    IdUsuario = id,
+                    Nombre = nombre,
+                    Correo = correos,
+                    Clave = Clave,
+                    IdRol = IdRol
+
+                };
+                FrmEditarUsuario frm = new FrmEditarUsuario(entity);
+                frm.ShowDialog();
+                UpdateGrid();
+            }
+
+            if (dataGridView1.Rows[e.RowIndex].Cells["Eliminar"].Selected)
+            {
+                int id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+                DialogResult dr = MessageBox.Show("Desea eliminar el registro actual?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    if (UsuarioBL.Instance.Delete(id))
+                    {
+                        MessageBox.Show("Se elimino con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                }
+                UpdateGrid();
+
+            }
+
         }
     }
 }

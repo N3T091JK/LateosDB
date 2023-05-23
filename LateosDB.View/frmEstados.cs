@@ -16,11 +16,14 @@ namespace LateosDB.View
 {
     public partial class frmEstados : Form
     {
+        int Id = 0;
         private List<Estado> _listado;
         public frmEstados()
         {
             InitializeComponent();
         }
+
+
 
         private void frmEstados_Load(object sender, EventArgs e)
         {
@@ -29,7 +32,7 @@ namespace LateosDB.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
         }
         private void UpdateGrid()
         {
@@ -39,7 +42,7 @@ namespace LateosDB.View
                         {
                             Id = x.IdEstado,
                             Nombres = x.Nombre
-                            
+
                         };
             dataGridView1.DataSource = query.ToList();
         }
@@ -56,7 +59,7 @@ namespace LateosDB.View
             var busqueda = from x in _listado
                            select new
                            {
-                               Id = x.IdEstado,
+                               IdEstados = x.IdEstado,
                                Nombres = x.Nombre
                            };
             var query = busqueda.Where(x => x.Nombres.ToLower().Contains(textBox2.Text.ToLower())).ToList();
@@ -67,15 +70,57 @@ namespace LateosDB.View
         {
             Estado entity = new Estado()
             {
+                IdEstado = Id,
                 Nombre = textBox1.Text.Trim(),
-            };
 
+            };
             if (EstadoBL.Instance.Insert(entity))
             {
-                MessageBox.Show("Se agrego con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Registro se agrego con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 UpdateGrid();
-                textBox1.Text = "";
             }
+
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.CurrentRow.Cells["Editar"].Selected)
+            {
+                int id = (int)dataGridView1.CurrentRow.Cells[2].Value;
+                string nombre = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+
+                Estado entity = new Estado()
+                {
+                    IdEstado = id,
+                    Nombre = nombre,
+
+                };
+             FrmEditarEstado frm = new FrmEditarEstado(entity);
+            frm.ShowDialog();
+            UpdateGrid();
+            }
+          
+            if (dataGridView1.Rows[e.RowIndex].Cells["Eliminar"].Selected)
+            {
+                int id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+                DialogResult dr = MessageBox.Show("Desea eliminar el registro actual?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    if (EstadoBL.Instance.Delete(id))
+                    {
+                        MessageBox.Show("Se elimino con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                }
+                UpdateGrid();
+
+            }
+
+
+
+
+        }
+
+
     }
 }

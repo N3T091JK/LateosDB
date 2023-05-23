@@ -12,3 +12,31 @@ C:\Users\HOME\Desktop\Proyecto Lateos\LateosDB\LateosDB.Entities\obj\Debug\Lateo
 C:\Users\HOME\Desktop\Proyecto Lateos\LateosDB\LateosDB.Entities\obj\Debug\LateosDB.Entities.pdb
 C:\Users\HOME\Desktop\Proyecto Lateos\LateosDB\LateosDB.Entities\obj\Debug\LateosDB.Entities.Migrations.LateosDBVentas.resources
 C:\Users\HOME\Desktop\Proyecto Lateos\LateosDB\LateosDB.Entities\obj\Debug\LateosDB.Entities.csproj.GenerateResource.cache
+C:\Users\HOME\Desktop\LateosDB\LateosDB.Entities\bin\Debug\LateosDB.Entities.dll.config
+C:\Users\HOME\Desktop\LateosDB\LateosDB.Entities\bin\Debug\LateosDB.Entities.dll
+C:\Users\HOME\Desktop\LateosDB\LateosDB.Entities\bin\Debug\LateosDB.Entities.pdb
+C:\Users\HOME\Desktop\LateosDB\LateosDB.Entities\bin\Debug\EntityFramework.dll
+C:\Users\HOME\Desktop\LateosDB\LateosDB.Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HOME\Desktop\LateosDB\LateosDB.Entities\bin\Debug\EntityFramework.xml
+C:\Users\HOME\Desktop\LateosDB\LateosDB.Entities\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HOME\Desktop\LateosDB\LateosDB.Entities\obj\Debug\LateosDB.Entities.csproj.AssemblyReference.cache
+C:\Users\HOME\Desktop\LateosDB\LateosDB.Entities\obj\Debug\LateosDB.Entities.csproj.CoreCompileInputs.cache
+C:\Users\HOME\Desktop\LateosDB\LateosDB.Entities\obj\Debug\LateosDB.Entities.csproj.CopyComplete
+C:\Users\HOME\Desktop\LateosDB\LateosDB.Entities\obj\Debug\LateosDB.Entities.dll
+C:\Users\HOME\Desktop\LateosDB\LateosDB.Entities\obj\Debug\LateosDB.Entities.pdb
+C:\Users\HOME\Desktop\LateosDB\LateosDB.Entities\obj\Debug\LateosDB.Entities.Migrations.LateosDBVentas.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.Entities\obj\Debug\LateosDB.Entities.csproj.GenerateResource.cache
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.Entities\bin\Debug\LateosDB.Entities.dll.config
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.Entities\bin\Debug\LateosDB.Entities.dll
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.Entities\bin\Debug\LateosDB.Entities.pdb
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.Entities\bin\Debug\EntityFramework.dll
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.Entities\bin\Debug\EntityFramework.xml
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.Entities\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.Entities\obj\Debug\LateosDB.Entities.csproj.AssemblyReference.cache
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.Entities\obj\Debug\LateosDB.Entities.csproj.CoreCompileInputs.cache
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.Entities\obj\Debug\LateosDB.Entities.csproj.CopyComplete
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.Entities\obj\Debug\LateosDB.Entities.dll
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.Entities\obj\Debug\LateosDB.Entities.pdb
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.Entities\obj\Debug\LateosDB.Entities.Migrations.LateosDBVentas.resources
+C:\Users\dougl\OneDrive\Escritorio\LateosDB\LateosDB.Entities\obj\Debug\LateosDB.Entities.csproj.GenerateResource.cache

@@ -92,5 +92,29 @@ namespace LateosDB.View
             FrmCompraProducto frm = new FrmCompraProducto();
             frm.ShowDialog();
         }
+
+        private void categoriaToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            BSCategoria frm = new BSCategoria();
+            frm.ShowDialog();
+        }
+
+        private void descuentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmDescuento1 frm = new FrmDescuento1();
+            frm.ShowDialog();
+        }
+
+        private void empresaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEmpresa frm = new frmEmpresa();
+            frm.ShowDialog();
+        }
+
+        private void busquedasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmBusquedasDetablas frm = new FrmBusquedasDetablas();
+            frm.ShowDialog();
+        }
     }
 }

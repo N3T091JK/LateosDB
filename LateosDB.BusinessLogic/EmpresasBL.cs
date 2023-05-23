@@ -52,6 +52,32 @@ namespace LateosDB.BusinessLogic
             }
             return result;
         }
+        public bool Update(Empresa entity)
+        {
+            bool result = false;
+            try
+            {
+                result = EmpresaDAL.Instance.Update(entity);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error. " + ex.Message);
+            }
+            return result;
+        }
 
+        public bool Delete(int id)
+        {
+            bool result = false;
+            try
+            {
+                result = EmpresaDAL.Instance.Delete(id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error. " + ex.Message);
+            }
+            return result;
+        }
     }
 }

@@ -73,29 +73,32 @@ namespace LateosDB.DataAccess
             }
         }
 
+
         public bool Update(Producto entity)
         {
             bool result = false;
             using (AppDBLateosContext _context = new AppDBLateosContext())
             {
-
-                var query = _context.productos.FirstOrDefault(x => x.IdProducto.Equals(entity.IdProducto));
-
-
-                if (query == null)
+                _context.Entry(entity).State = EntityState.Modified;
+                result = _context.SaveChanges() > 0;
+            }
+            return result;
+        }
+        public bool Delete(int id)
+        {
+            using (AppDBLateosContext _context = new AppDBLateosContext())
+            {
+                bool result = false;
+                var query = _context.productos.FirstOrDefault(x => x.IdProducto == id);
+                if (query != null)
                 {
-                    _context.Entry(entity).State = EntityState.Modified;
+                    _context.productos.Remove(query);
                     result = _context.SaveChanges() > 0;
-
                 }
-
                 return result;
-
             }
 
-
         }
-
 
 
 
