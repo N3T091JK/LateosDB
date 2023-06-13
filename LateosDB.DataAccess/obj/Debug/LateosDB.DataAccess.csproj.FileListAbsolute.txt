@@ -26,8 +26,6 @@ C:\Users\HOME\Desktop\LateosDB\LateosDB.DataAccess\bin\Debug\LateosDB.Entities.d
 C:\Users\HOME\Desktop\LateosDB\LateosDB.DataAccess\bin\Debug\EntityFramework.xml
 C:\Users\HOME\Desktop\LateosDB\LateosDB.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\HOME\Desktop\LateosDB\LateosDB.DataAccess\obj\Debug\LateosDB.DataAccess.csproj.AssemblyReference.cache
-C:\Users\HOME\Desktop\LateosDB\LateosDB.DataAccess\obj\Debug\LateosDB.Entities.Migrations.LateosDBVentas.resources
-C:\Users\HOME\Desktop\LateosDB\LateosDB.DataAccess\obj\Debug\LateosDB.DataAccess.csproj.GenerateResource.cache
 C:\Users\HOME\Desktop\LateosDB\LateosDB.DataAccess\obj\Debug\LateosDB.DataAccess.csproj.CoreCompileInputs.cache
 C:\Users\HOME\Desktop\LateosDB\LateosDB.DataAccess\obj\Debug\LateosDB.DataAccess.csproj.CopyComplete
 C:\Users\HOME\Desktop\LateosDB\LateosDB.DataAccess\obj\Debug\LateosDB.DataAccess.dll

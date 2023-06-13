@@ -1,5 +1,4 @@
 ﻿using LateosDB.BusinessLogic;
-using LateosDB.DataAccess;
 using LateosDB.Entities;
 using System;
 using System.Collections.Generic;
@@ -65,7 +64,7 @@ namespace LateosDB.View
             dataGridView1.DataSource = query;
         }
         //----------------------------------------------------------------------
-       
+
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -76,7 +75,7 @@ namespace LateosDB.View
         {
             EditarRol frm = new EditarRol();
             frm.ShowDialog();
-            UpdateGrid();
+            //UpdateGrid();
         }
         //----------------------------------------------------------------------
 
@@ -99,7 +98,7 @@ namespace LateosDB.View
 
                 EditarRol frm = new EditarRol(entity);
                 frm.ShowDialog();
-                UpdateGrid();
+                //UpdateGrid();
 
 
             }
@@ -113,7 +112,7 @@ namespace LateosDB.View
                     if (RolBL.Instance.Delete(id))
                     {
                         MessageBox.Show("Se elimino con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                       
+
                     }
                 }
                 UpdateGrid();

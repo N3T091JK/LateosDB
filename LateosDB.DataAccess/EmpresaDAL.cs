@@ -25,9 +25,9 @@ namespace LateosDB.DataAccess
             }
         }
 
-        public List<Empresa> SellectAll()
+        public List<Empresas> SellectAll()
         {
-            List<Empresa> result = null;
+            List<Empresas> result = null;
             using (AppDBLateosContext _context = new AppDBLateosContext())
             {
                 result = _context.empresas.ToList();
@@ -36,9 +36,9 @@ namespace LateosDB.DataAccess
             return result;
         }
 
-        public Empresa SellectById(int id)
+        public Empresas SellectById(int id)
         {
-            Empresa result = null;
+            Empresas result = null;
             using (AppDBLateosContext _context = new AppDBLateosContext())
             {
                 result = _context.empresas
@@ -48,7 +48,7 @@ namespace LateosDB.DataAccess
             return result;
         }
 
-        public bool Insert(Empresa entity)
+        public bool Insert(Empresas entity)
         {
             bool result = false;
             using (AppDBLateosContext _context = new AppDBLateosContext())
@@ -67,7 +67,7 @@ namespace LateosDB.DataAccess
 
         }
 
-        public bool Update(Empresa entity)
+        public bool Update(Empresas entity)
         {
             bool result = false;
             using (AppDBLateosContext _context = new AppDBLateosContext())
@@ -77,6 +77,8 @@ namespace LateosDB.DataAccess
             }
             return result;
         }
+
+
         public bool Delete(int id)
         {
             using (AppDBLateosContext _context = new AppDBLateosContext())

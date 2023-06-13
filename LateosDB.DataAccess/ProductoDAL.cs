@@ -33,9 +33,9 @@ namespace LateosDB.DataAccess
             List<Producto> result = null;
             using (AppDBLateosContext _context = new AppDBLateosContext())
             {
-                result = _context.productos.Include(x => x.Estado).ToList();
+                result = _context.productos.Include(x => x.Estados).ToList();
                 result = _context.productos.Include(x => x.Category).ToList();
-               
+                result = _context.productos.Include(x => x.Inventarios).ToList();
             }
             return result;
         }
@@ -60,17 +60,21 @@ namespace LateosDB.DataAccess
             bool result = false;
             using (AppDBLateosContext _context = new AppDBLateosContext())
             {
-                var query = _context.productos.FirstOrDefault(x => x.IdProducto.Equals(entity.IdProducto));
+                var query = _context.productos
+                    .FirstOrDefault(x => x.Nombre.Equals(entity.Nombre)
+                    );
                 if (query == null)
                 {
                     _context.productos.Add(entity);
                     result = _context.SaveChanges() > 0;
+                    _context.inventarios.Add(new Inventario { IdProduto = entity.IdProducto, cantidad = 0 });
 
                 }
 
                 return result;
 
             }
+
         }
 
 

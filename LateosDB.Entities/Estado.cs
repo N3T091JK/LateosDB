@@ -20,5 +20,6 @@ namespace LateosDB.Entities
         public virtual ICollection<Empleado> Empleados { get; set; }
         public virtual ICollection<Producto> Productos { get; set; }
         public virtual ICollection<Rol> Roles { get; set; }
+        public virtual ICollection<Estado> Estados { get; set; }
     }
 }

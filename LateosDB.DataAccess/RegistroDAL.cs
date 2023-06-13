@@ -37,9 +37,7 @@ namespace LateosDB.DataAccess
             {
                 result = _context.Registros.Include(x => x.Cliente).ToList();
                 result = _context.Registros.Include(x => x.Empleado).ToList();
-                result = _context.Registros.Include(x => x.CompraProductos).ToList();
                 result = _context.Registros.Include(x => x.Usuarios).ToList();
-                result = _context.Registros.Include(x => x.Facturas).ToList();
                 result = _context.Registros.Include(x => x.Rols).ToList();
                 //result = _context.Registros.Include(x => x.Empresa).ToList();
 

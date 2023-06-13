@@ -16,6 +16,7 @@ namespace LateosDB.View
     public partial class FrmInventario : Form
     {
         private List<Inventario> _listado;
+
         public FrmInventario()
         {
             InitializeComponent();
@@ -24,38 +25,59 @@ namespace LateosDB.View
         private void FrmInventario_Load(object sender, EventArgs e)
         {
             UpdateGrid();
-            
+           
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            Inventario entity = new Inventario()
-            {
-                Stock = Convert.ToInt32(numericUpDown1.Value),
-            };
-
-            if (InventarioBL.Instance.Insert(entity))
-            {
-                MessageBox.Show("Se agrego con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                UpdateGrid();
-            }
+            Close();
         }
-
-
+  
         private void UpdateGrid()
         {
-            _listado = InventarioBL.Instance.SellecALL();
-            var query2 = from x in _listado
-                         select new
-                         {
-                             id = x.IdInventario,
-                             Nombres = x.Stock
-                             
-
-                         };
-            dataGridView1.DataSource = query2.ToList();
+            _listado = InventarioBL.Instance.SelectAll();
+            var query = from x in _listado
+                        select new
+                        {
+                           Id = x.IdInventario,
+                           Cantidades = x.cantidad,
+                            //Producto = x.Productos.Precio.ToString()
+                        };
+            dataGridView1.DataSource = query.ToList();
         }
 
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+           
+
+        }
+        //int id = 0;
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.CurrentRow.Cells["Editar"].Selected)
+            {
+                int id = (int)dataGridView1.CurrentRow.Cells[2].Value;
+                int Cantidad = (int)dataGridView1.CurrentRow.Cells[3].Value;
+                int IdProducto = _listado.FirstOrDefault(x => x.IdInventario.Equals(id)).IdProduto;
+
+
+                Inventario entity = new Inventario()
+                {
+                  IdInventario = id,
+                  cantidad = Cantidad,
+                  IdProduto = IdProducto
+
+
+                };
+                EdiatrInventario frm = new EdiatrInventario(entity);
+                frm.ShowDialog();
+                UpdateGrid();
+            }
+
+            
+
+            
+        }
 
 
 

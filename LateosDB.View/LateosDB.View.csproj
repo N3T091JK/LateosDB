@@ -36,15 +36,55 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BarcodeStandard, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BarcodeLib.2.4.0\lib\netstandard2.0\BarcodeStandard.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Impresor">
+      <HintPath>..\packages\Impresor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp, Version=2.88.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\SkiaSharp.2.88.3\lib\net462\SkiaSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.5.0.2\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.5.0.1\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.5.0.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,23 +114,17 @@
     <Compile Include="Cero.Designer.cs">
       <DependentUpon>Cero.cs</DependentUpon>
     </Compile>
+    <Compile Include="EdiatrInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EdiatrInventario.Designer.cs">
+      <DependentUpon>EdiatrInventario.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditarRol.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditarRol.Designer.cs">
       <DependentUpon>EditarRol.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmBuscar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmBuscar.Designer.cs">
-      <DependentUpon>FrmBuscar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmBusquedasDetablas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmBusquedasDetablas.Designer.cs">
-      <DependentUpon>FrmBusquedasDetablas.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmCliente.cs">
       <SubType>Form</SubType>
@@ -104,29 +138,11 @@
     <Compile Include="FrmCompraProducto.Designer.cs">
       <DependentUpon>FrmCompraProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmComprar.cs">
+    <Compile Include="frmComprar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmComprar.Designer.cs">
-      <DependentUpon>FrmComprar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmDescuento1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmDescuento1.Designer.cs">
-      <DependentUpon>FrmDescuento1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmDetalleComprar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmDetalleComprar.Designer.cs">
-      <DependentUpon>FrmDetalleComprar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmDetalleFactura.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmDetalleFactura.Designer.cs">
-      <DependentUpon>FrmDetalleFactura.cs</DependentUpon>
+    <Compile Include="frmComprar.Designer.cs">
+      <DependentUpon>frmComprar.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmDisponible.cs">
       <SubType>Form</SubType>
@@ -146,17 +162,23 @@
     <Compile Include="FrmEditarEmpleado.Designer.cs">
       <DependentUpon>FrmEditarEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmEditarEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEditarEmpresa.Designer.cs">
+      <DependentUpon>FrmEditarEmpresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmEditarEstado.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmEditarEstado.Designer.cs">
       <DependentUpon>FrmEditarEstado.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmEditarPorcentaje.cs">
+    <Compile Include="FrmEditarHistorial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEditarPorcentaje.Designer.cs">
-      <DependentUpon>FrmEditarPorcentaje.cs</DependentUpon>
+    <Compile Include="FrmEditarHistorial.Designer.cs">
+      <DependentUpon>FrmEditarHistorial.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmEditarUsuario.cs">
       <SubType>Form</SubType>
@@ -182,12 +204,6 @@
     <Compile Include="frmEstados.Designer.cs">
       <DependentUpon>frmEstados.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmFactura.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmFactura.Designer.cs">
-      <DependentUpon>FrmFactura.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmHistorial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,24 +215,6 @@
     </Compile>
     <Compile Include="FrmInventario.Designer.cs">
       <DependentUpon>FrmInventario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmLog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmLog.Designer.cs">
-      <DependentUpon>FrmLog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmProducto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmProducto.Designer.cs">
-      <DependentUpon>FrmProducto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmRegistro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmRegistro.Designer.cs">
-      <DependentUpon>FrmRegistro.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRoles.cs">
       <SubType>Form</SubType>
@@ -239,6 +237,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validardatos.cs" />
+    <Compile Include="FRmVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRmVentas.Designer.cs">
+      <DependentUpon>FRmVentas.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Agregar.resx">
       <DependentUpon>Agregar.cs</DependentUpon>
     </EmbeddedResource>
@@ -248,14 +252,11 @@
     <EmbeddedResource Include="Cero.resx">
       <DependentUpon>Cero.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EdiatrInventario.resx">
+      <DependentUpon>EdiatrInventario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditarRol.resx">
       <DependentUpon>EditarRol.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmBuscar.resx">
-      <DependentUpon>FrmBuscar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmBusquedasDetablas.resx">
-      <DependentUpon>FrmBusquedasDetablas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
@@ -263,17 +264,8 @@
     <EmbeddedResource Include="FrmCompraProducto.resx">
       <DependentUpon>FrmCompraProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmComprar.resx">
-      <DependentUpon>FrmComprar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmDescuento1.resx">
-      <DependentUpon>FrmDescuento1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmDetalleComprar.resx">
-      <DependentUpon>FrmDetalleComprar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmDetalleFactura.resx">
-      <DependentUpon>FrmDetalleFactura.cs</DependentUpon>
+    <EmbeddedResource Include="frmComprar.resx">
+      <DependentUpon>frmComprar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDisponible.resx">
       <DependentUpon>FrmDisponible.cs</DependentUpon>
@@ -284,11 +276,14 @@
     <EmbeddedResource Include="FrmEditarEmpleado.resx">
       <DependentUpon>FrmEditarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmEditarEmpresa.resx">
+      <DependentUpon>FrmEditarEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmEditarEstado.resx">
       <DependentUpon>FrmEditarEstado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmEditarPorcentaje.resx">
-      <DependentUpon>FrmEditarPorcentaje.cs</DependentUpon>
+    <EmbeddedResource Include="FrmEditarHistorial.resx">
+      <DependentUpon>FrmEditarHistorial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEditarUsuario.resx">
       <DependentUpon>FrmEditarUsuario.cs</DependentUpon>
@@ -302,23 +297,11 @@
     <EmbeddedResource Include="frmEstados.resx">
       <DependentUpon>frmEstados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmFactura.resx">
-      <DependentUpon>FrmFactura.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmHistorial.resx">
       <DependentUpon>FrmHistorial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmInventario.resx">
       <DependentUpon>FrmInventario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmLog.resx">
-      <DependentUpon>FrmLog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmProducto.resx">
-      <DependentUpon>FrmProducto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmRegistro.resx">
-      <DependentUpon>FrmRegistro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRoles.resx">
       <DependentUpon>FrmRoles.cs</DependentUpon>
@@ -339,6 +322,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="FRmVentas.resx">
+      <DependentUpon>FRmVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -466,6 +452,10 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\SkiaSharp.NativeAssets.macOS.2.88.3\build\net462\SkiaSharp.NativeAssets.macOS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SkiaSharp.NativeAssets.macOS.2.88.3\build\net462\SkiaSharp.NativeAssets.macOS.targets'))" />
+    <Error Condition="!Exists('..\packages\SkiaSharp.NativeAssets.Win32.2.88.3\build\net462\SkiaSharp.NativeAssets.Win32.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SkiaSharp.NativeAssets.Win32.2.88.3\build\net462\SkiaSharp.NativeAssets.Win32.targets'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\SkiaSharp.NativeAssets.macOS.2.88.3\build\net462\SkiaSharp.NativeAssets.macOS.targets" Condition="Exists('..\packages\SkiaSharp.NativeAssets.macOS.2.88.3\build\net462\SkiaSharp.NativeAssets.macOS.targets')" />
+  <Import Project="..\packages\SkiaSharp.NativeAssets.Win32.2.88.3\build\net462\SkiaSharp.NativeAssets.Win32.targets" Condition="Exists('..\packages\SkiaSharp.NativeAssets.Win32.2.88.3\build\net462\SkiaSharp.NativeAssets.Win32.targets')" />
 </Project>

@@ -67,21 +67,6 @@ namespace LateosDB.DataAccess
 
         }
 
-        //public List<Registro> SellecRegistroById(int id)
-        //{
-        //    List<Registro> result = null;
-        //    using (AppDBLateosContext _context = new AppDBLateosContext())
-        //    {
-        //        result = _context.Registros.Where(x => x.IdRol.Equals(id)).ToList();
-        //    }
-
-        //    return result;
-
-
-        //}
-
-
-
         public bool Insert(Rol entity)
         {
             bool result = false;

@@ -1,6 +1,7 @@
 ﻿using LateosDB.BusinessLogic;
 using LateosDB.Entities;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,11 +21,17 @@ namespace LateosDB.View
         public FrmUsuario()
         {
             InitializeComponent();
+            UpdateGrid();
+            UpdateCombo();
+            UpdateComboEstado();
+
         }
         private void FrmUsuario_Load(object sender, EventArgs e)
         {
             UpdateGrid();
             UpdateCombo();
+            UpdateComboEstado();
+           
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -36,18 +43,23 @@ namespace LateosDB.View
             comboBox1.ValueMember = "IdRol";
             comboBox1.DataSource = RolBL.Instance.SellecALL();
         }
+        private void UpdateComboEstado()
+        {
+            comboBox2.DisplayMember = "Nombre";
+            comboBox2.ValueMember = "IdEstado";
+            comboBox2.DataSource = EstadoBL.Instance.SellecALL();
+        }
         private void UpdateGrid()
         {
-            _listado = UsuarioBL.Instance.SellecALL();
+            _listado = UsuarioBL.Instance.SelectAll();
             var query = from x in _listado
                         select new
                         {
                             Id = x.IdUsuario,
-                            Nombres = x.Nombre,
+
                             correos = x.Correo,
-                            Claves = x.Clave,
-                            //Eliminar cantidad de entities
-                            //cantidade = x.cantidades,
+                            Claves = x.Password,
+                            estados = x.Estados.Nombre,
                             Rolt = x.Rols.Roles
 
 
@@ -67,65 +79,64 @@ namespace LateosDB.View
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            _listado = UsuarioBL.Instance.SellecALL();
+            _listado = UsuarioBL.Instance.SelectAll();
 
             var busqueda = from x in _listado
                            select new
                            {
                                Id = x.IdUsuario,
-                               Nombres = x.Nombre,
                                correos = x.Correo,
-                               Claves = x.Clave,
-                               //Eliminar cantidad de entities
-                               //cantidade = x.cantidades,
+                               Claves = x.Password,
+                               estados = x.Estados,                            
                                Rolt = x.Rols.Roles
                            };
-            var query = busqueda.Where(x => x.Nombres.ToLower().Contains(textBox4.Text.ToLower())).ToList();
+            var query = busqueda.Where(x => x.correos.ToLower().Contains(textBox4.Text.ToLower())).ToList();
             dataGridView1.DataSource = query;
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
+
+            private void button3_Click(object sender, EventArgs e)
+            {
             Usuario entity = new Usuario()
             {
-                Nombre = textBox1.Text.Trim(),
+
                 Correo = textBox3.Text.Trim(),
-                Clave = textBox2.Text.Trim(),
-                IdRol = (int)comboBox1.SelectedValue
+                Password = textBox2.Text.Trim(),
+                IdEstado = (int)comboBox1.SelectedValue,
+                IdRol = (int)comboBox2.SelectedValue
             };
 
             if (UsuarioBL.Instance.Insert(entity))
             {
                 MessageBox.Show("Se agrego con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                UpdateGrid();
-                textBox1.Text = "";
+
                 textBox2.Text = "";
                 textBox3.Text = "";
+                UpdateGrid();
             }
         }
-        //MontoTotal = decimal.Parse(textBox2.Text),
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+            //MontoTotal = decimal.Parse(textBox2.Text),
+            private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+            {
             if (dataGridView1.CurrentRow.Cells["Editar"].Selected)
             {
                 int id = (int)dataGridView1.CurrentRow.Cells[2].Value;
                 string nombre = dataGridView1.CurrentRow.Cells[3].Value.ToString();
                 string correos = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                string Clave = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                byte Password = (byte)dataGridView1.CurrentRow.Cells[5].Value;
                 //decimal moneda = decimal.Parse(dataGridView1.CurrentRow.Cells[5].Value.ToString());
                 int IdRol = _listado.FirstOrDefault(x => x.IdUsuario.Equals(id)).IdRol;
                 Usuario entity = new Usuario()
                 {
                     IdUsuario = id,
-                    Nombre = nombre,
                     Correo = correos,
-                    Clave = Clave,
+                    //Password = Password,
                     IdRol = IdRol
 
                 };
                 FrmEditarUsuario frm = new FrmEditarUsuario(entity);
                 frm.ShowDialog();
-                UpdateGrid();
+                //UpdateGrid();
             }
 
             if (dataGridView1.Rows[e.RowIndex].Cells["Eliminar"].Selected)
@@ -145,5 +156,6 @@ namespace LateosDB.View
             }
 
         }
+        
     }
 }

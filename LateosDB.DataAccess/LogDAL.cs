@@ -44,7 +44,6 @@ namespace LateosDB.DataAccess
 
         }
 
-
         public Log SellectById(int id)
         {
             Log result = null;
@@ -53,51 +52,28 @@ namespace LateosDB.DataAccess
                 result = _context.Logs
                     .FirstOrDefault(x => x.logId == id);
             }
-            return result;
-        }
 
+            return result;
+
+
+        }
         public bool Insert(Log entity)
         {
             bool result = false;
             using (AppDBLateosContext _context = new AppDBLateosContext())
             {
-                var query = _context.Logs.FirstOrDefault(x => x.logId.Equals(entity.logId));
+                var query = _context.Logs
+                    .FirstOrDefault(x => x.Fecha.Equals(entity.Fecha)
+                    );
                 if (query == null)
                 {
                     _context.Logs.Add(entity);
                     result = _context.SaveChanges() > 0;
 
-                }
 
-                return result;
-
-            }
-
-        }
-
-
-        public bool Update(Log entity)
-        {
-            bool result = false;
-            using (AppDBLateosContext _context = new AppDBLateosContext())
-            {
-                _context.Entry(entity).State = EntityState.Modified;
-                result = _context.SaveChanges() > 0;
-            }
-            return result;
-        }
-        public bool Delete(int id)
-        {
-            using (AppDBLateosContext _context = new AppDBLateosContext())
-            {
-                bool result = false;
-                var query = _context.Logs.FirstOrDefault(x => x.logId == id);
-                if (query != null)
-                {
-                    _context.Logs.Remove(query);
-                    result = _context.SaveChanges() > 0;
                 }
                 return result;
+
             }
 
         }

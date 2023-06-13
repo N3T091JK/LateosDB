@@ -54,17 +54,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoriaBL.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="ClienteBL.cs" />
-    <Compile Include="CompraProductoBL.cs" />
-    <Compile Include="CompraRealizadaBL.cs" />
-    <Compile Include="DescuentoBL.cs" />
-    <Compile Include="DetalleComprarBL.cs" />
-    <Compile Include="DetalleFacturaBL.cs" />
+    <Compile Include="ComprarBL.cs" />
+    <Compile Include="ComprarProductoBL.cs" />
+    <Compile Include="DetallesVentasBL.cs" />
     <Compile Include="EmpleadoBL.cs" />
     <Compile Include="EmpresasBL.cs" />
     <Compile Include="EstadoBL.cs" />
-    <Compile Include="FacturaBL.cs" />
     <Compile Include="InventarioBL.cs" />
     <Compile Include="LogBL.cs" />
     <Compile Include="ProductoBL.cs" />
@@ -72,6 +68,7 @@
     <Compile Include="RegistroBL.cs" />
     <Compile Include="RolBL.cs" />
     <Compile Include="UsuarioBL.cs" />
+    <Compile Include="VentaBL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

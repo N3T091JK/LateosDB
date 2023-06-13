@@ -23,9 +23,9 @@ namespace LateosDB.View
         {
             InitializeComponent();
             id = entity.IdUsuario;
-            textBox1.Text = entity.Nombre;
+
             textBox2.Text = entity.Correo;
-            textBox3.Text = entity.Clave;
+            //textBox3.Text = entity.Password;
             UpdateCombo();
             comboBox1.SelectedValue = entity.IdRol;
         }
@@ -45,10 +45,11 @@ namespace LateosDB.View
             Usuario entity = new Usuario()
             {
                 IdUsuario = id,
-                Nombre = textBox1.Text.Trim(),
+
                 Correo = textBox2.Text.Trim(),
-                Clave = textBox3.Text.Trim(),
-                IdRol = (int)comboBox1.SelectedValue
+                IdRol = (int)comboBox1.SelectedValue,
+                //Password = byte.Parse(textBox3.Text.TrimStart()
+         
             };
             if (id == 0)
             {

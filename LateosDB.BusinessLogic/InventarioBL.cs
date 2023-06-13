@@ -22,22 +22,24 @@ namespace LateosDB.BusinessLogic
                 return _instance;
             }
         }
-
-        public List<Inventario> SellecALL()
+    
+        public List<Inventario> SelectAll()
         {
+
             List<Inventario> result;
             try
             {
+                var query = InventarioDAL.Instance.SellectAll();
                 result = InventarioDAL.Instance.SellectAll();
             }
             catch (Exception ex)
             {
-
                 throw new Exception(ex.Message);
             }
-            return result;
-        }
 
+            return result;
+        
+}
         public bool Insert(Inventario entity)
         {
             bool result = false;

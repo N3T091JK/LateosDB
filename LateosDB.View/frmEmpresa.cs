@@ -15,7 +15,8 @@ namespace LateosDB.View
 {
     public partial class frmEmpresa : Form
     {
-        private List<Empresa> _listado;
+        int id = 0;  
+        private List<Empresas> _listado;
         public frmEmpresa()
         {
             InitializeComponent();
@@ -44,7 +45,17 @@ namespace LateosDB.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Empresa entity = new Empresa()
+            
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+                Empresas entity = new Empresas()
             {
                 //Cambiar a string Telefono
                 NombreComercial = textBox1.Text.Trim(),
@@ -62,9 +73,51 @@ namespace LateosDB.View
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Close();
+            //**********************EDITAR************************
+            if (dataGridView1.CurrentRow.Cells["Editar"].Selected)
+            {
+                int id = (int)dataGridView1.CurrentRow.Cells[2].Value;
+                string NombreComercial = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                string NombreLegal = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                string Direccion = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                string Telefono = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                string Email = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                string Rubro = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                Empresas entity = new Empresas()
+                {
+                    IdEmpresa = id,
+                    NombreComercial = NombreComercial,
+                    NombreLegal = NombreLegal,
+                    Direccion = Direccion,
+                    Telefono = Telefono,
+                    Email = Email,
+                    Rubro = Rubro
+                };
+               
+                FrmEditarEmpresa frm = new FrmEditarEmpresa(entity);
+                frm.ShowDialog();
+                UpdateGrid();
+ }
+                //**********************ELIMINAR************************
+                if (dataGridView1.Rows[e.RowIndex].Cells["Eliminar"].Selected)
+                {
+                    int Id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+                    DialogResult dr = MessageBox.Show("Desea eliminar el registro actual?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dr == DialogResult.Yes)
+                    {
+                        if (EmpresasBL.Instance.Delete(Id))
+                        
+                        MessageBox.Show("Se elimino con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+               
+                UpdateGrid();
+            }
+
+
+
         }
     }
 }

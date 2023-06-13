@@ -1,11 +1,12 @@
 ﻿using LateosDB.Entities;
+using LateosDB.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LateosDB.DataAccess
+namespace LateosDB.BusinessLogic
 {
     public class CategoriaBL
     {
@@ -77,6 +78,8 @@ namespace LateosDB.DataAccess
             }
             return result;
         }
+
+
 
     }
 }

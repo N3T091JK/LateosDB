@@ -27,9 +27,7 @@ namespace LateosDB.View
             UpdateGrid();
             UpdateComboCLiente();
             UpdateComboEmpleado();
-            UpdateComboCompraProducto();
             UpdateComboUsuario();
-            UpdateComboFactura();
             UpdateComboRols();
         }
         private void UpdateComboCLiente()
@@ -46,25 +44,15 @@ namespace LateosDB.View
             comboBox1.DataSource = EmpleadoBL.Instance.SellecALL();
         }
 
-        private void UpdateComboCompraProducto()
-        {
-            comboBox3.DisplayMember = "MarcaProducto";
-            comboBox3.ValueMember = "IdCompraProducto";
-            comboBox3.DataSource = CompraProductoBL.Instance.SellecALL();
-        }
+  
         private void UpdateComboUsuario()
         {
-            comboBox4.DisplayMember = "Nombre";
+            comboBox4.DisplayMember = "Correo";
             comboBox4.ValueMember = "IdUsuario";
-            comboBox4.DataSource = UsuarioBL.Instance.SellecALL();
+            comboBox4.DataSource = UsuarioBL.Instance.SelectAll();
         }
 
-        private void UpdateComboFactura()
-        {
-            comboBox5.DisplayMember = "MontoTotal";
-            comboBox5.ValueMember = "IdFactura";
-            comboBox5.DataSource = FacturaBL.Instance.SellecALL();
-        }
+
 
 
         private void UpdateComboRols()
@@ -84,12 +72,11 @@ namespace LateosDB.View
                             Id = x.IdRegistro,
                             Nombres = x.Nombre,
                             Clientes = x.Cliente.Nombre,
-                            Empleados = x.Empleado.Nombre,
-                            ComprarProducto = x.CompraProductos.MarcaProducto,
-                            Usuario = x.Usuarios.Nombre,
-                            Factura = x.Facturas.MontoTotal,
+                            Empleados = x.Empleado.Nombre,                  
+                            Usuario = x.Usuarios.Correo,
+  
                             Role = x.Rols.Roles,
-                            //Empresas = x.Empresa.NombreLegal
+                            
 
 
                         };
@@ -112,17 +99,58 @@ namespace LateosDB.View
                 Nombre = textBox2.Text.Trim(),
                 IdCliente = (int)comboBox2.SelectedValue,
                 IdEmpleado = (int)comboBox1.SelectedValue,
-                IdCompraProducto = (int)comboBox3.SelectedValue,
                 IdUsuario = (int)comboBox4.SelectedValue,
-                IdFactura = (int)comboBox5.SelectedValue,
                 IdRol = (int)comboBox6.SelectedValue,
-                //IdEmpresa = (int)comboBox7.SelectedValue
+    
             };
 
             if (RegistroBL.Instance.Insert(entity))
             {
                 MessageBox.Show("Se agrego con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 UpdateGrid();
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.CurrentRow.Cells["Editar"].Selected)
+            {
+                int id = (int)dataGridView1.CurrentRow.Cells[2].Value;
+                string codigo = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                //decimal moneda = decimal.Parse(dataGridView1.CurrentRow.Cells[5].Value.ToString());
+                int IdCliente = _listado.FirstOrDefault(x => x.IdRegistro.Equals(id)).IdCliente;
+                int IdEmpleados = _listado.FirstOrDefault(x => x.IdRegistro.Equals(id)).IdEmpleado;
+                int IdUsuario = _listado.FirstOrDefault(x => x.IdRegistro.Equals(id)).IdUsuario;
+                int IdRol = _listado.FirstOrDefault(x => x.IdRegistro.Equals(id)).IdRol;
+                Registro entity = new Registro()
+                {
+                   IdRegistro = id,
+                   Nombre = codigo,
+                    IdCliente = IdCliente,
+                    IdEmpleado = IdEmpleados,
+                    IdUsuario = IdUsuario,      
+                    IdRol = IdRol
+
+                };
+                //FrmEditarUsuario frm = new FrmEditarUsuario(entity);
+                //frm.ShowDialog();
+                //UpdateGrid();
+            }
+
+            if (dataGridView1.Rows[e.RowIndex].Cells["Eliminar"].Selected)
+            {
+                int id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+                DialogResult dr = MessageBox.Show("Desea eliminar el registro actual?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    if (RegistroBL.Instance.Delete(id))
+                    {
+                        MessageBox.Show("Se elimino con exito!", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                }
+                UpdateGrid();
+
             }
         }
     }

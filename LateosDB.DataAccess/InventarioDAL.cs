@@ -59,7 +59,7 @@ namespace LateosDB.DataAccess
             bool result = false;
             using (AppDBLateosContext _context = new AppDBLateosContext())
             {
-                var query = _context.inventarios.FirstOrDefault(x => x.Stock.Equals(entity.Stock));
+                var query = _context.inventarios.FirstOrDefault(x => x.IdInventario.Equals(entity.IdInventario));
                 if (query == null)
                 {
                     _context.inventarios.Add(entity);
@@ -93,6 +93,9 @@ namespace LateosDB.DataAccess
             }
             return result;
         }
+
+
+
         public bool Delete(int id)
         {
             using (AppDBLateosContext _context = new AppDBLateosContext())

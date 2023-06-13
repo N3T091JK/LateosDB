@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 namespace LateosDB.Entities
 {
     public class Log
-        //Sele cambio donde decia tabla y ahora es password
     {
         [Key]
         public int logId { get; set; }
@@ -16,15 +15,9 @@ namespace LateosDB.Entities
         public DateTime Fecha { get; set; }
         [MaxLength(80)]
         [Required]
-        public string Usuario { get; set; }
+        public string Email { get; set; }
         [MaxLength(80)]
         [Required]
         public string Password { get; set; }
-        [MaxLength(80)]
-        [Required]
-        public string Accion { get; set; }
-        [MaxLength(200)]
-        [Required]
-        public string Descripcion { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,11 +13,10 @@ namespace LateosDB.Entities
     {
         [Key]
         public int IdInventario { get; set; }
+        [ForeignKey("Productos")]
+        public int IdProduto { get; set; }
         [Required]
-        public string CodigoN { get; set; }
-        public int Stock { get; set; }
-        [Required]
-        public int IdProduto { get; set; }             
+        public int cantidad { get; set; }            
         public virtual Producto Productos { get; set; }
     }
 }

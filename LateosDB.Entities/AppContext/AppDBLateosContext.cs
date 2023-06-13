@@ -16,20 +16,18 @@ namespace LateosDB.Entities.AppContext
         }
         public DbSet<Categoria> categorias { get; set; }       
         public DbSet<Cliente> clientes { get; set; }
-        public DbSet<CompraProducto> compraProductos { get; set; }
-        public DbSet<DetalleCompra> detalleCompras { get; set; }
-        public DbSet<DetalleFactura> detalleFacturas { get; set; }
         public DbSet<Empleado> empleados { get; set; }
-        public DbSet<Empresa> empresas { get; set; }
+        public DbSet<Empresas> empresas { get; set; }
         public DbSet<Estado> estados { get; set; }
-        public DbSet<Factura> facturas { get; set; }
         public DbSet<Inventario> inventarios { get; set; }
         public DbSet<Producto> productos { get; set; }
         public DbSet<Rol> Rols { get; set; }
         public DbSet<Usuario> usuarios { get; set; }
         public DbSet<Log> Logs { get; set; }
         public DbSet<Registro> Registros { get; set; }
-        public DbSet<CompraRealizada> CompraRealizadas { get; set; }
-        public DbSet<Descuento> descuentos { get; set; }
+        public DbSet<Ventas> ventas { get; set; }
+        public DbSet<DetalleVentas> detalleVentas { get; set; }
+        public DbSet<Compra> Compras { get; set; }
+        public DbSet<ComprarProducto> comprarProductos { get; set; }
     }
 }

@@ -23,9 +23,9 @@ namespace LateosDB.BusinessLogic
             }
         }
 
-        public List<Empresa> SellecALL()
+        public List<Empresas> SellecALL()
         {
-            List<Empresa> result;
+            List<Empresas> result;
             try
             {
                 result = EmpresaDAL.Instance.SellectAll();
@@ -38,7 +38,7 @@ namespace LateosDB.BusinessLogic
             return result;
         }
 
-        public bool Insert(Empresa entity)
+        public bool Insert(Empresas entity)
         {
             bool result = false;
             try
@@ -52,7 +52,7 @@ namespace LateosDB.BusinessLogic
             }
             return result;
         }
-        public bool Update(Empresa entity)
+        public bool Update(Empresas entity)
         {
             bool result = false;
             try

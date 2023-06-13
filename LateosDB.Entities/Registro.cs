@@ -19,15 +19,10 @@ namespace LateosDB.Entities
         public virtual Cliente Cliente { get; set; }
         public int IdEmpleado { get; set; }
         public virtual Empleado Empleado { get; set; }
-        public int IdCompraProducto { get; set; }
-        public virtual CompraProducto CompraProductos { get; set; }
         public int IdUsuario { get; set; }
         public virtual Usuario Usuarios { get; set; }
-        public int IdFactura { get; set; }
-        public virtual Factura Facturas { get; set; }
         public int IdRol { get; set; }
         public virtual Rol Rols { get; set; }
-        //public int IdEmpresa { get; set; }
-        //public virtual Empresa Empresa { get; set; }
+
     }
 }

@@ -63,9 +63,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(388, 112);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 26);
+            this.label2.Size = new System.Drawing.Size(81, 26);
             this.label2.TabIndex = 13;
-            this.label2.Text = "Usuario:";
+            this.label2.Text = "Correo:";
             // 
             // textBox2
             // 
@@ -78,6 +78,7 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(612, 170);
             this.textBox3.Name = "textBox3";
+            this.textBox3.PasswordChar = '*';
             this.textBox3.Size = new System.Drawing.Size(185, 20);
             this.textBox3.TabIndex = 15;
             // 
@@ -102,6 +103,7 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 17;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // pictureBox4
             // 

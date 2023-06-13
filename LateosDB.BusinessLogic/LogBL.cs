@@ -17,13 +17,16 @@ namespace LateosDB.BusinessLogic
             get
             {
                 if (_instance == null)
+                {
                     _instance = new LogBL();
-
+                }
                 return _instance;
+
             }
+
         }
 
-        public List<Log> SellecALL()
+        public List<Log> SellectAll()
         {
             List<Log> result;
             try
@@ -32,10 +35,12 @@ namespace LateosDB.BusinessLogic
             }
             catch (Exception ex)
             {
-
+                new Exception(ex.ToString());
                 throw new Exception(ex.Message);
             }
+
             return result;
+
         }
 
         public bool Insert(Log entity)
@@ -47,37 +52,12 @@ namespace LateosDB.BusinessLogic
             }
             catch (Exception ex)
             {
+                new Exception(ex.ToString());
                 throw new Exception(ex.Message);
+            }
 
-            }
             return result;
-        }
 
-        public bool Update(Log entity)
-        {
-            bool result = false;
-            try
-            {
-                result = LogDAL.Instance.Update(entity);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error. " + ex.Message);
-            }
-            return result;
-        }
-        public bool Delete(int id)
-        {
-            bool result = false;
-            try
-            {
-                result = LogDAL.Instance.Delete(id);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error. " + ex.Message);
-            }
-            return result;
         }
     }
 }

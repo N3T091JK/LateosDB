@@ -27,6 +27,7 @@ namespace LateosDB.View
             textBox1.Text = entity.Nombre;
             textBox2.Text = entity.Apellido;
             textBox3.Text = entity.Direccion;
+            
             dateTimePicker1.Value = entity.FechaRegistro;
             UpdateCombo();
             comboBox1.SelectedValue = entity.IdEstado;
@@ -37,12 +38,7 @@ namespace LateosDB.View
             comboBox1.DisplayMember = "Nombre";
             comboBox1.ValueMember = "IdEstado";
             comboBox1.DataSource = EstadoBL.Instance.SellecALL();
-        }
-        private void FrmEditarEmpleado_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        }  
         private void button3_Click(object sender, EventArgs e)
         {
             Empleado entity = new Empleado()
@@ -71,5 +67,11 @@ namespace LateosDB.View
             }
             this.Close();
         }
+        private void FrmEditarEmpleado_Load(object sender, EventArgs e)
+        {
+
+        }
+
+      
     }
 }

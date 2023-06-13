@@ -58,7 +58,7 @@ namespace LateosDB.BusinessLogic
             bool result = false;
             try
             {
-                 result = RolDAL.Instance.Update(entity);
+                result = RolDAL.Instance.Update(entity);
             }
             catch (Exception ex)
             {

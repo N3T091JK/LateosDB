@@ -14,9 +14,11 @@ namespace LateosDB.Entities
         public int IdProducto { get; set; }
         [MaxLength(80)]
         [Required]
-        public string Codigo { get; set; }
+        public string Marca { get; set; }
         [Required]
         public string Nombre { get; set; }
+        [MaxLength(12)]
+        public string CodigoBarra { get; set; }
         [Required]
         public string Decripcion { get; set; }
         [Required]
@@ -25,11 +27,11 @@ namespace LateosDB.Entities
         public DateTime FechaCaducidad { get; set; }
         [Required]
         public int IdEstado { get; set; }
-        public virtual Estado Estado { get; set; }
+        public virtual Estado Estados { get; set; }
         public int IdCategoria { get; set; }
         public virtual Categoria Category { get; set; }
+        public virtual ICollection<Compra> Compras { get; set; }
         public virtual ICollection<Inventario> Inventarios { get; set; }        
-        public virtual ICollection<DetalleFactura> DetalleFacturas { get; set; }
-
+        public virtual ICollection<DetalleVentas> DetalleVentas { get; set; }
     }
 }

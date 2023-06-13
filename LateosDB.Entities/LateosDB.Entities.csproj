@@ -54,20 +54,17 @@
     <Compile Include="AppContext\AppDBLateosContext.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Cliente.cs" />
-    <Compile Include="CompraProducto.cs" />
-    <Compile Include="CompraRealizada.cs" />
-    <Compile Include="Descuento.cs" />
-    <Compile Include="DetalleCompra.cs" />
-    <Compile Include="DetalleFactura.cs" />
+    <Compile Include="Compra.cs" />
+    <Compile Include="ComprarProducto.cs" />
+    <Compile Include="DetalleVentas.cs" />
     <Compile Include="Empleado.cs" />
-    <Compile Include="Empresa.cs" />
+    <Compile Include="Empresas.cs" />
     <Compile Include="Estado.cs" />
-    <Compile Include="Factura.cs" />
     <Compile Include="Inventario.cs" />
     <Compile Include="Log.cs" />
-    <Compile Include="Migrations\202305211550586_LateosDBVentas.cs" />
-    <Compile Include="Migrations\202305211550586_LateosDBVentas.designer.cs">
-      <DependentUpon>202305211550586_LateosDBVentas.cs</DependentUpon>
+    <Compile Include="Migrations\202306131845242_LateosDBVentasUltimo.cs" />
+    <Compile Include="Migrations\202306131845242_LateosDBVentasUltimo.designer.cs">
+      <DependentUpon>202306131845242_LateosDBVentasUltimo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Producto.cs" />
@@ -75,14 +72,15 @@
     <Compile Include="Registro.cs" />
     <Compile Include="Rol.cs" />
     <Compile Include="Usuario.cs" />
+    <Compile Include="Ventas.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202305211550586_LateosDBVentas.resx">
-      <DependentUpon>202305211550586_LateosDBVentas.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202306131845242_LateosDBVentasUltimo.resx">
+      <DependentUpon>202306131845242_LateosDBVentasUltimo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

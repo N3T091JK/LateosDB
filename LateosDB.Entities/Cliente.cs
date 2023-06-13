@@ -21,6 +21,6 @@ namespace LateosDB.Entities
         public int IdEstado { get; set; }
         public virtual Estado Estado { get; set; }
         public virtual ICollection<Registro> Registros { get; set; }
-        public virtual ICollection<Factura> Facturas { get; set; }
+        public virtual ICollection<Ventas> Ventas { get; set; }
     }
 }

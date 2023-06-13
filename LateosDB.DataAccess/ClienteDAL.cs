@@ -40,35 +40,6 @@ namespace LateosDB.DataAccess
         }
 
 
-
-        //public List<Registro> SellecRegistroById(int id)
-        //{
-        //    List<Registro> result = null;
-        //    using (AppDBLateosContext _context = new AppDBLateosContext())
-        //    {
-        //        result = _context.Registros.Where(x => x.IdCliente.Equals(id)).ToList();
-        //    }
-        //    return result;
-        //}
-
-        public List<Factura> SellecFacturaById(int id)
-        {
-            List<Factura> result = null;
-            using (AppDBLateosContext _context = new AppDBLateosContext())
-            {
-                result = _context.facturas.Where(x => x.IdCliente.Equals(id)).ToList();
-            }
-
-            return result;
-
-
-        }
-
-
-
-
-
-
         public Cliente SellectById(int id)
         {
             Cliente result = null;

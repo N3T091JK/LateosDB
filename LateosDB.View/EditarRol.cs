@@ -1,5 +1,4 @@
 ﻿using LateosDB.BusinessLogic;
-using LateosDB.DataAccess;
 using LateosDB.Entities;
 using System;
 using System.Collections.Generic;
@@ -69,6 +68,11 @@ namespace LateosDB.View
 
             }
             this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

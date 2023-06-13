@@ -24,5 +24,5 @@ C:\Users\HOME\Desktop\LateosDB\LateosDB.Entities\obj\Debug\LateosDB.Entities.csp
 C:\Users\HOME\Desktop\LateosDB\LateosDB.Entities\obj\Debug\LateosDB.Entities.csproj.CopyComplete
 C:\Users\HOME\Desktop\LateosDB\LateosDB.Entities\obj\Debug\LateosDB.Entities.dll
 C:\Users\HOME\Desktop\LateosDB\LateosDB.Entities\obj\Debug\LateosDB.Entities.pdb
-C:\Users\HOME\Desktop\LateosDB\LateosDB.Entities\obj\Debug\LateosDB.Entities.Migrations.LateosDBVentas.resources
+C:\Users\HOME\Desktop\LateosDB\LateosDB.Entities\obj\Debug\LateosDB.Entities.Migrations.LateosDBVentasUltimo.resources
 C:\Users\HOME\Desktop\LateosDB\LateosDB.Entities\obj\Debug\LateosDB.Entities.csproj.GenerateResource.cache
